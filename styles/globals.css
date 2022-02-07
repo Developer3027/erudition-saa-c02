@@ -1,9 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
+:root {
+  --bg-icon: #4c3d31;
+  --icon-border: #af8678;
+  --light-frame: #e5e5e5;
+  --light-bg: #b9c9ee;
+  --link-blue: #4b789f;
+  --link-hl: #0070f3;
+  --alt-bg: #eeeded;
+  --red: #ff0f00;
+  --orange: #ffb000;
+  --white: #ffffff;
+  --burnt: #2f2f2f;
+  --black: #000000;
+  --success: #acf390;
+  --error: #ffbebe;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 a {
@@ -13,4 +31,71 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+#show {
+  left: 0;
+}
+
+#hide {
+  left: -100%;
+}
+
+#hideFaq {
+  display: none;
+  transition: 250ms;
+}
+
+#showFaq {
+  display: block;
+  transition: 250ms;
+}
+
+.error-text {
+  color: var(--red);
+}
+
+.success-text {
+  color: var(--success);
+}
+
+.p-2 {
+  padding: 1rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.pl-2 {
+  padding-left: 1rem;
+}
+
+.pl-3 {
+  padding-left: 3rem;
+}
+
+.pb-2 {
+  padding-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--link-blue);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  transform: scale(0.98);
 }

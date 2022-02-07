@@ -1,0 +1,148 @@
+/**? Navbar */
+.navContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
+  height: 80px;
+  width: 1000px;
+  margin: 0 4rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: #98492d; */
+}
+
+.navMenu {
+  font-size: 2rem;
+  color: var(--light-frame);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-icon);
+  border: 2px solid var(--icon-border);
+  cursor: pointer;
+}
+
+.quickNav {
+  display: flex;
+  list-style: none;
+  margin-left: 3rem;
+  text-align: center;
+}
+
+.sidebarNav {
+  background: var(--light-bg);
+  color: var(--bg-icon);
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 80px;
+  transition: 250ms;
+  z-index: 10;
+  overflow-y: auto;
+}
+
+/**? Sidebar */
+.sideLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  list-style: none;
+  height: 60px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.sideLink:hover {
+  cursor: pointer;
+}
+
+.sideLinkLabel {
+  margin-left: 16px;
+  margin-right: 14px;
+}
+
+.sideSubDrop {
+  height: 60px;
+  padding-left: 3rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 12px;
+  overflow-y: auto;
+}
+
+.sideSubDrop:hover {
+  background: var(--light-frame);
+  cursor: pointer;
+}
+
+/**? Footer */
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.footerWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  min-width: 1000px;
+  color: var(--white);
+  background-color: var(--black);
+  padding: 3rem 0;
+}
+
+.footerLogo {
+  color: var(--success);
+  font-weight: 700;
+  margin-left: 0.5rem;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerLinks a {
+  margin: 0.5rem 0;
+}
+
+.footerLinks a:hover {
+  color: var(--link-hl);
+}
+@media (max-width: 768px) {
+  /**? Navbar */
+  .navbar {
+    margin: 0 1rem;
+  }
+
+  .navMenu {
+    width: 35px;
+    height: 35px;
+  }
+
+  .quickNav {
+    margin-left: 0;
+  }
+  /**? Footer */
+  .footerWrap {
+    min-width: calc(100% - 4rem);
+    flex-direction: column;
+  }
+
+  .footerLinks {
+    margin-top: 1rem;
+  }
+}
