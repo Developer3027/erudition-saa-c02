@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-import styles from '../../styles/Layout.module.css';
-
 const Sidebar = ({ item }) => {
   const [subnav, setSubnav] = useState(false);
 
@@ -11,12 +9,12 @@ const Sidebar = ({ item }) => {
   };
   return (
     <div>
-      <div className={styles.sideLink} onClick={item.subNav && ShowSubnav}>
+      <div className='side-link' onClick={item.subNav && ShowSubnav}>
         <Link href={item.path}>
           <a>
             <div>
               {item.icon}
-              <span className={styles.sideLinkLabel}>{item.title}</span>
+              <span className='side-link-label'>{item.title}</span>
               {item.subNav && subnav
                 ? item.iconOpen
                 : item.subNav
@@ -30,9 +28,9 @@ const Sidebar = ({ item }) => {
         item.subNav.map((item, i) => (
           <Link key={i} href={item.path}>
             <a>
-              <div className={styles.sideSubDrop}>
+              <div className='side-sub-drop'>
                 {item.icon}
-                <span className={styles.sideLinkLabel}>{item.title}</span>
+                <span className='side-link-label'>{item.title}</span>
               </div>
             </a>
           </Link>

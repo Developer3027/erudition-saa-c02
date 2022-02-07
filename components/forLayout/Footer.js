@@ -1,20 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from '../../styles/Layout.module.css';
 
 const Footer = () => {
   return (
-    <footer className={styles.footerContainer}>
-      <div className={styles.footerWrap}>
+    <footer className='foot-container'>
+      <div className='foot-wrap'>
         <div>
           <a
             href='https://mason-roberts.com'
             target='_blank'
             rel='noopener noreferrer'>
-            Powered by <span className={styles.footerLogo}>Developer3027</span>
+            Powered by <span className='foot-logo'>Developer3027</span>
           </a>
         </div>
-        <div className={styles.footerLinks}>
+        <div className='foot-links'>
           <Link href='/about'>
             <a>About</a>
           </Link>
@@ -22,7 +21,7 @@ const Footer = () => {
             <a>Cert Prep</a>
           </Link>
         </div>
-        <div className={styles.footerLinks}>
+        <div className='foot-links'>
           <Link href='/exam-prep'>
             <a>Exam Prep</a>
           </Link>

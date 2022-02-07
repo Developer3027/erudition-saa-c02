@@ -1,5 +1,5 @@
 /**? Navbar */
-.navContainer {
+.nav-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,7 @@
   /* background-color: #98492d; */
 }
 
-.navMenu {
+.nav-menu {
   font-size: 2rem;
   color: var(--light-frame);
   border-radius: 50%;
@@ -29,14 +29,14 @@
   cursor: pointer;
 }
 
-.quickNav {
+.nav-quick {
   display: flex;
   list-style: none;
   margin-left: 3rem;
   text-align: center;
 }
 
-.sidebarNav {
+.nav-sidebar {
   background: var(--light-bg);
   color: var(--bg-icon);
   width: 250px;
@@ -51,7 +51,7 @@
 }
 
 /**? Sidebar */
-.sideLink {
+.side-link {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,16 +62,16 @@
   font-size: 14px;
 }
 
-.sideLink:hover {
+.side-link:hover {
   cursor: pointer;
 }
 
-.sideLinkLabel {
+.side-link-label {
   margin-left: 16px;
   margin-right: 14px;
 }
 
-.sideSubDrop {
+.side-sub-drop {
   height: 60px;
   padding-left: 3rem;
   display: flex;
@@ -81,20 +81,20 @@
   overflow-y: auto;
 }
 
-.sideSubDrop:hover {
+.side-sub-drop:hover {
   background: var(--light-frame);
   cursor: pointer;
 }
 
 /**? Footer */
-.footerContainer {
+.foot-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
 
-.footerWrap {
+.foot-wrap {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -104,22 +104,22 @@
   padding: 3rem 0;
 }
 
-.footerLogo {
+.foot-logo {
   color: var(--success);
   font-weight: 700;
   margin-left: 0.5rem;
 }
 
-.footerLinks {
+.foot-links {
   display: flex;
   flex-direction: column;
 }
 
-.footerLinks a {
+.foot-links a {
   margin: 0.5rem 0;
 }
 
-.footerLinks a:hover {
+.foot-links a:hover {
   color: var(--link-hl);
 }
 @media (max-width: 768px) {
@@ -128,21 +128,21 @@
     margin: 0 1rem;
   }
 
-  .navMenu {
+  .nav-menu {
     width: 35px;
     height: 35px;
   }
 
-  .quickNav {
+  .nav-quick {
     margin-left: 0;
   }
   /**? Footer */
-  .footerWrap {
+  .foot-wrap {
     min-width: calc(100% - 4rem);
     flex-direction: column;
   }
 
-  .footerLinks {
+  .foot-links {
     margin-top: 1rem;
   }
 }
