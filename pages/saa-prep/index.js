@@ -7,7 +7,6 @@ import Note from '../../components/Note';
 import styles from '../../styles/Test.module.css';
 
 const CertPrep = ({ notes }) => {
-  console.log(notes);
   return (
     <div className={styles.testContainer}>
       <div className={styles.testWrap}>

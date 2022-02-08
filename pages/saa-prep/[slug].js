@@ -5,11 +5,13 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-import MainLearningAd from '../../components//forHome/HomeLearningAd';
+import { quizsData } from '../../data/quizsData';
+import HomeLearningAd from '../../components/forHome/HomeLearningAd';
 
 import styles from '../../styles/Test.module.css';
 
-export default function CliffNotes({ slug, contentHtml, quiz }) {
+export default function CliffNotes({ slug, quiz }) {
+  
   const [showQuiz, setShowQuiz] = useState(true);
   const [showPromo, setShowPromo] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -76,7 +78,7 @@ export default function CliffNotes({ slug, contentHtml, quiz }) {
                 </h2>
               )}
               <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-              {showPromo && <MainLearningAd />}
+              {showPromo && <HomeLearningAd />}
             </>
           )}
         </div>
@@ -86,6 +88,7 @@ export default function CliffNotes({ slug, contentHtml, quiz }) {
 }
 
 export async function getStaticPaths() {
+
   const files = fs.readdirSync(path.join('data/notes'));
 
   const paths = files.map((filename) => ({
@@ -93,14 +96,15 @@ export async function getStaticPaths() {
       slug: filename.replace('.md', '')
     }
   }));
-
   return {
     paths,
     fallback: false
   };
 }
 
-export async function getStaticProps({ params: { slug } }) {
+export async function getStaticProps({ params:{ slug } }) {
+  const quiz = quizsData.find((quiz) => quiz.id === slug);
+
   const markdownWithMeta = fs.readFileSync(
     path.join('data/notes', slug + '.md'),
     'utf-8'
@@ -111,10 +115,6 @@ export async function getStaticProps({ params: { slug } }) {
   const processedContent = await remark().use(html).process(content);
 
   const contentHtml = processedContent.toString();
-
-  const res = await fetch(`http://localhost:3000/api/quiz/${slug}`);
-  const data = await res.json();
-  const quiz = data;
 
   return {
     props: {

@@ -1,113 +1,76 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
+
 import styles from '../styles/Test.module.css';
 
-const Quiz = ({ quizes }) => {
-  const [msg, setMsg] = useState('');
-  const [count, setCount] = useState(0);
+const Quiz = ({ slug, quiz }) => {
+  console.log(slug)
+  const [showQuiz, setShowQuiz] = useState(true);
+  const [showPromo, setShowPromo] = useState(false);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [score, setScore] = useState(0);
+
+  const questionAnswered = (correct) => {
+    if (score <= 2) {
+      setShowPromo(true);
+    } else {
+      setShowPromo(false);
+    }
+
+    if (correct) {
+      setScore((previousScore) => previousScore + 1);
+    }
+
+    if (currentQuestion + 1 < quiz.result.length) {
+      setCurrentQuestion(
+        (previousCurrentQuestion) => previousCurrentQuestion + 1
+      );
+    } else {
+      setShowQuiz(false);
+    }
+  };
 
   return (
-    <div className={styles.quizContainer}>
-      <p className={styles.quizWrap}>
-        Nothing fancy. Select your answer. If you get a alert then that answer
-        is wrong. If you choose the correct answer, you will not get the alert.
-        The quiz is not scored and not stored. This is to provide you a base
-        line before continuing.
-      </p>
-      {quizes.map((quiz, i) => (
-        <div key={i} className={styles.quizWrap}>
-          <div className={styles.quizQuestion}>
-            <span>{quiz.id}&#41; &nbsp;</span>
-            <h3>{quiz.question}</h3>
-          </div>
-          <div className={styles.quizChoice}>
-            <form className={styles.quizInputs}>
-              <div className={styles.inputRow}>
-                <input
-                  type='radio'
-                  id={quiz.id}
-                  name={`answer${quiz.id}`}
-                  value='a'
-                  onChange={(e) => {
-                    if (e.target.value !== quiz.answer) {
-                      alert('Sorry, try again');
-                      setCount(count++);
-                    }
-                  }}
-                />
-                <label>&nbsp; {quiz.a}</label>
-              </div>
-              <div className={styles.inputRow}>
-                <input
-                  type='radio'
-                  id={quiz.id}
-                  name={`answer${quiz.id}`}
-                  value='b'
-                  onChange={(e) => {
-                    if (e.target.value !== quiz.answer) {
-                      addCount();
-                      alert('Sorry, try again');
-                      setCount(count++);
-                    }
-                  }}
-                />
-                <label>&nbsp; {quiz.b}</label>
-              </div>
-              <div className={styles.inputRow}>
-                <input
-                  type='radio'
-                  id={quiz.id}
-                  name={`answer${quiz.id}`}
-                  value='c'
-                  onChange={(e) => {
-                    if (e.target.value !== quiz.answer) {
-                      addCount();
-                      alert('Sorry, try again');
-                      setCount(count++);
-                    }
-                  }}
-                />
-                <label>&nbsp; {quiz.c}</label>
-              </div>
-              <div className={styles.inputRow}>
-                <input
-                  type='radio'
-                  id={quiz.id}
-                  name={`answer${quiz.id}`}
-                  value='d'
-                  onChange={(e) => {
-                    if (e.target.value !== quiz.answer) {
-                      addCount();
-                      alert('Sorry, try again');
-                      setCount(count++);
-                    }
-                  }}
-                />
-                <label>&nbsp; {quiz.d}</label>
-              </div>
-              <div></div>
-            </form>
-          </div>
-        </div>
-      ))}
-      <h4>{msg && msg}</h4>
-      <div className={styles.quizLinkWrap}>
-        <button
-          onClick={() => {
-            if (count) {
-              setMsg('Welcome, I hope this helps!');
-            } else {
-              setMsg('5 Stars!');
-            }
-          }}>
-          check
-        </button>
-        <Link href='/saa-prep/a-fundamentals'>
-          <a>Fundamentals</a>
-        </Link>
+    <>
+      <h1>{slug} Quiz</h1>
+      <div>
+        <p>
+          Welcome Spot Checks. Spot Checks are tiny quiz&#39;s to wet your
+          appetite. Here you can see the number of questions, the current
+          question your on and your score. You get one point for each correct
+          answer, zero for wrong answers. This score is for you and is a way to
+          measure your knowledge before moving on to the notes. Pass or fail,
+          you will still reach the cliff notes after the quiz. Enjoy!
+        </p>
+        <h2>
+          {currentQuestion + 1} of {quiz.result.length} Score: {score}
+        </h2>
+        <h3>{quiz.result[currentQuestion].question}</h3>
+        <ul>
+          {quiz.result[currentQuestion].options.map((option) => (
+            <li
+              key={option.id}
+              className={styles.testLi}
+              onClick={() => questionAnswered(option.correct)}>
+              {option.text}
+            </li>
+          ))}
+        </ul>
       </div>
-    </div>
+    </>
   );
 };
 
 export default Quiz;
+
+export async function getServerSideProps() {
+  const res = await fetch(`http://localhost:3000/api/quiz/${slug}`);
+  const data = await res.json();
+  const quiz = data;
+  console.log(quiz)
+
+  return {
+    props: {
+      quiz
+    }
+  };
+}
