@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container a {
+  color: var(--link-hl);
+}
+
+.wrap {
+  width: 1000px;
+  padding: 0.8rem;
+}
+
+.aboutNav {
+  text-align: right;
+  background-color: var(--light-bg);
+  padding: 0.5rem;
+}
+
+.aboutNavLink {
+  margin: 0 1rem;
+}

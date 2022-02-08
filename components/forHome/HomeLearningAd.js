@@ -11,7 +11,10 @@ const HomeLearningAd = () => {
       </div>
       <div className={styles.grid}>
         <div className={styles.learnCard}>
-          <a href='https://acloudguru.com/course/aws-certified-solutions-architect-associate-saa-c02'>
+          <a
+            href='https://acloudguru.com/course/aws-certified-solutions-architect-associate-saa-c02'
+            target='_blank'
+            rel='noopener noreferrer'>
             <Image
               className={styles.homeImage}
               src='https://dev3027public.s3.amazonaws.com/12712530.png'
@@ -27,7 +30,10 @@ const HomeLearningAd = () => {
           </a>
         </div>
         <div className={styles.learnCard}>
-          <a href='https://www.udemy.com'>
+          <a
+            href='https://www.udemy.com'
+            target='_blank'
+            rel='noopener noreferrer'>
             <Image
               className={styles.homeImage}
               src='https://dev3027public.s3.amazonaws.com/udemy.png'
