@@ -10,7 +10,7 @@ import HomeLearningAd from '../../components/forHome/HomeLearningAd';
 
 import styles from '../../styles/Test.module.css';
 
-export default function CliffNotes({ slug, quiz }) {
+export default function CliffNotes({ slug, contentHtml, quiz }) {
   
   const [showQuiz, setShowQuiz] = useState(true);
   const [showPromo, setShowPromo] = useState(false);
