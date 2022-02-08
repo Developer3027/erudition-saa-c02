@@ -1,0 +1,163 @@
+.testAnchor {
+  color: var(--link-hl);
+}
+
+.testContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 3rem;
+  min-height: 100vh;
+}
+
+.testWrap {
+  width: 1000px;
+}
+
+.testLeft {
+  margin-left: 1rem;
+  padding: 0.5rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.testLeft p {
+  line-height: 1.3rem;
+}
+
+.testGrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+
+.testCard {
+  padding: 15px;
+  border-radius: 10px;
+  margin: 0.5rem 0.8rem;
+  width: 275px;
+  height: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.testPageCard {
+  padding: 15px 30px;
+}
+
+.testTitle {
+  margin: 10px 0;
+}
+
+.testBody pre {
+  padding: 20px;
+  margin: 20px 0;
+  line-height: 2.3;
+}
+
+.testBody a {
+  color: var(--link-blue);
+}
+
+.testBody a:hover {
+  color: var(--link-hl);
+}
+
+.testLi {
+  cursor: pointer;
+  margin-top: 0.8rem;
+  padding: 0.5rem;
+  border-radius: 3px;
+  border: 1px solid var(--light-frame);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.testLi:hover {
+  background-color: var(--light-bg);
+  box-shadow: none;
+}
+
+.testMsg {
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 3px;
+  background-color: var(--success);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.testMsg:hover {
+  box-shadow: none;
+}
+
+.testPass {
+  padding: 0.3rem;
+  background-color: var(--success);
+  border-radius: 3px;
+}
+
+.testErrorMsg {
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 3px;
+  background-color: var(--error);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.testError:hover {
+  box-shadow: none;
+}
+
+.testFail {
+  padding: 0.3rem;
+  background-color: var(--error);
+  border-radius: 3px;
+}
+
+/*] *********************************/
+/*] Quiz ****************************/
+.quizContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.quizWrap {
+  align-items: flex-start;
+  width: 1000px;
+}
+
+.quizQuestion {
+  display: flex;
+  align-items: center;
+}
+
+.quizChoice {
+  padding-left: 1rem;
+}
+
+.quizInputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.quizLinkWrap {
+  display: flex;
+  justify-content: space-evenly;
+  width: 1000px;
+  margin-bottom: 5rem;
+}
+
+.inputRow {
+  display: flex;
+  margin-bottom: 1rem;
+}
+/*] *********************************/
+@media (max-width: 768px) {
+  .testWrap {
+    width: calc(100vw - 4rem);
+  }
+}

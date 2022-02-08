@@ -13,6 +13,8 @@ function MyApp({ Component, pageProps }) {
           name='description'
           content='Cliff Notes for the Solution Architect Associate Certification course on A Cloud Guru. Brush up on the information required to pass the SAA-C02 Exam. Presented by Developer 3027, Mason Roberts. Give yourself the best shot at passing the AWS certification. Pass the aws saa-c02 certification.'
         />
+        <link rel='preconnect' href='https://fonts.google.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='true' />
       </Head>
       <Navbar />
       <Component {...pageProps} />

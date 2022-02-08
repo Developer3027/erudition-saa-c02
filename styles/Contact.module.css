@@ -1,0 +1,146 @@
+/**? Contact on Home */
+.mainContactContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainContactWrap {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+  width: 1000px;
+  background: var(--black);
+}
+
+.mainContactBox {
+  padding: 1rem;
+  width: 375px;
+  border-radius: 5px;
+  background-color: var(--white);
+}
+
+.mainContactHead {
+  color: var(--black);
+}
+
+/**? Page */
+.contactPageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  height: 100vh;
+}
+
+.contactPageWrap {
+  display: flex;
+  justify-content: center;
+  grid-template-columns: fit-content(50%);
+  width: 1000px;
+}
+
+.contactPageLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 5px;
+  width: 350px;
+  max-height: 700px;
+  background-color: var(--orange);
+  border: 2px solid var(--icon-border);
+  padding: 2rem 2rem 0 2rem;
+  margin-right: 1em;
+}
+
+.contactPageRight {
+  width: 50%;
+  max-height: 700px;
+  /* padding: 2em 2em 0 2em; */
+  margin-right: 1em;
+}
+
+/**? Component */
+.contactInputWrap {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.contactLabel {
+  margin-bottom: 0.3rem;
+  font-size: 14px;
+  color: var(--burnt);
+}
+
+.contactInput {
+  padding: 0.5rem;
+  background-color: var(--light-bg);
+  border: 1px solid var(--icon-border);
+  border-radius: 3px;
+}
+
+.contactTextArea {
+  padding: 0.5rem;
+  background-color: var(--light-bg);
+  border: 1px solid var(--icon-border);
+  border-radius: 3px;
+}
+
+.contactBtn {
+  padding: 0.8rem;
+  width: 100%;
+  font-size: 18px;
+  background-color: var(--orange);
+  border: 1px solid var(--white);
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .mainContactContainer {
+    width: 100%;
+  }
+  .mainContactWrap {
+    width: 100%;
+  }
+
+  .mainContactBox {
+    width: 325px;
+  }
+
+  .contactPageContainer {
+    margin-top: 0.5rem;
+  }
+
+  .contactPageWrap {
+    width: 100%;
+    align-items: center;
+    grid-template-columns: none;
+    flex-direction: column;
+  }
+
+  .contactPageLeft {
+    padding: 0 2rem 2rem 2rem;
+    margin: 0;
+    border: none;
+    background-color: var(--white);
+  }
+
+  .contactPageRight {
+    width: calc(100% - 4rem);
+    margin: 0;
+    background-color: var(--light-bg);
+    padding: 0 2rem 2rem 2rem;
+    border: 2px solid var(--icon-border);
+    border-radius: 5px;
+  }
+
+  .contactInput,
+  .contactTextArea {
+    background-color: var(--white);
+  }
+}

@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
+
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -18,7 +20,6 @@ const Navbar = () => {
     <div className='nav-container'>
       <div className='navbar'>
         <div
-          href='#'
           onAuxClick={() => router.push('/')}
           onClick={() => {
             setShowNav(!showNav);

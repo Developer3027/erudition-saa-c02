@@ -1,31 +1,31 @@
-.container {
-  padding: 0 2rem;
+/*] Home index **********************/
+.badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  bottom: 6rem;
+  left: 1.5rem;
+  background-color: var(--bg-icon);
+  padding: 0.3rem;
+  border-radius: 10px;
+  color: gold;
+  font-size: 3rem;
 }
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.badgeFont {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--light-bg);
 }
 
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+.cert {
+  font-size: 1.7rem;
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+.description {
+  margin: 4rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
 }
 
 .title a {
@@ -42,27 +42,16 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .title,
 .description {
-  text-align: center;
+  text-align: left;
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+.subTitle {
+  font-size: 2rem;
 }
 
 .grid {
@@ -74,15 +63,16 @@
 }
 
 .card {
-  margin: 1rem;
-  padding: 1.5rem;
+  margin: 1rem 0.5rem;
+  padding: 1rem;
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
+  border: 2px solid var(--bg-icon);
   border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+  max-width: 275px;
 }
 
 .card:hover,
@@ -103,14 +93,491 @@
   line-height: 1.5;
 }
 
-.logo {
-  height: 1em;
+.container {
+  padding: 0 2rem;
+}
+
+.divide {
+  display: flex;
+  grid-template-columns: 50% 50%;
+}
+
+.main {
+  min-height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  padding: 1rem;
+  margin: 0 2rem;
+  background-color: var(--light-bg);
+  border-radius: 10px;
+}
+
+.homeWrap {
+  margin: 0 2rem;
+}
+
+.heroWidth {
+  margin: 0 2rem;
+}
+
+.homeLeft {
+  width: 600px;
+}
+
+.homeRight {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  width: 400px;
+}
+/*] *********************************/
+/*] Ad on Home **********************/
+.adContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  margin-top: 6rem;
+  min-width: 1000px;
+  min-height: 200px;
+}
+
+.ad {
+  background-color: var(--orange);
+  padding: 3rem;
+  margin-top: -4rem;
+}
+
+.buttonWrap {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.adButton {
+  border: 1px solid var(--bg-icon);
+  border-radius: 5px;
+  padding: 0.5rem 1.3rem;
+  font-size: 18px;
+  background-color: var(--white);
+}
+/*] *********************************/
+/*] FAQ *****************************/
+.faqContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 0.2rem;
+  background-color: var(--alt-bg);
+}
+
+.faqBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.faqWrap {
+  min-width: 1000px;
+  min-height: 0.5rem;
+  padding: 0 2rem;
+}
+
+.faqQuestion {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid var(--bg-icon);
+  border-radius: 5px;
+  background-color: white;
+  padding: 0.5rem;
+  width: 950px;
+}
+
+.faqAnswer {
+  margin-top: -0.3rem;
+  width: 950px;
+}
+
+.faqAtag {
+  color: var(--link-blue);
+}
+
+.faqAtag:hover {
+  color: var(--link-hl);
+}
+
+.faqIcon {
+  width: 25px;
+  height: 25px;
+  padding: 0.2rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  background-color: var(--bg-icon);
+  border: 2px solid var(--icon-border);
+}
+/*] *********************************/
+/*] Learn Ad ************************/
+.learnHead {
+  padding-right: 2rem;
+}
+
+.learnCard {
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 2px solid var(--bg-icon);
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  width: 250px;
+}
+
+.learnCard:hover,
+.learnCard:focus,
+.learnCard:active {
+  color: #0070f3;
+  border-color: #0070f3;
+}
+
+.learnContainer,
+.donateContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 2rem 0;
+}
+/*] *********************************/
+/*] Endorse *************************/
+.endorseContainer {
+  display: flex;
+  align-items: center;
+  width: 1000px;
+  margin-bottom: 4rem;
+  background-color: var(--alt-bg);
+}
+
+.endorseWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.endorseImgWrap {
+  padding: 8rem 1rem;
+  height: 372px;
+  background-color: var(--orange);
+}
+
+.endorseImgBg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 200px;
+  background-color: var(--black);
+}
+
+.endorseImg {
+  padding: 0.5rem;
+  background-color: var(--white);
+  margin-right: -9rem;
+}
+
+.endorseHead {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+.endorseSubTitle {
+  font-size: 2rem;
+}
+
+.endorseSecond {
+  display: flex;
+  justify-content: space-between;
+}
+
+.endorseBox {
+  width: 130px;
+}
+
+.endorseLine {
+  border: 2px solid var(--orange);
+  margin-left: -5px;
+}
+/*] *********************************/
+/*] Donate **************************/
+.donateAnchor {
+  color: var(--link-hl);
+}
+
+.donateHead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.donateSubTitle {
+  text-align: center;
+  width: 400px;
+}
+
+.donateGrid {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.donateCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+  width: 275px;
+  height: 445px;
+  text-align: center;
+  border-radius: 6px;
+  color: var(--white);
+  background-color: var(--black);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.donateCardLight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+  width: 250px;
+  height: 415px;
+  text-align: center;
+  border-radius: 6px;
+  border: 2px solid var(--black);
+  color: var(--black);
+  background-color: var(--white);
+}
+
+.donateCardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.donateInfo {
+  font-size: 28px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--orange);
+  background-color: var(--bg-icon);
+  border-radius: 50%;
+}
+
+.donateInfo:hover {
+  color: var(--white);
+}
+
+.donatePrice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donateList {
+  text-align: center;
+}
+
+.donateListHead {
+  text-align: center;
+}
+
+.donateList li {
+  margin-top: 0.5rem;
+  list-style: none;
+  margin-left: -0.3rem;
+}
+
+.donateBtn {
+  padding: 0.8rem;
+  font-size: 18px;
+  background-color: var(--orange);
+  border: 1px solid var(--white);
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+/*] *********************************/
+/*] Footer **************************/
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.footerWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  min-width: 1000px;
+  color: var(--white);
+  background-color: var(--black);
+  padding: 3rem 0;
+}
+
+.footerLogo {
+  color: var(--success);
+  font-weight: 700;
   margin-left: 0.5rem;
 }
 
-@media (max-width: 600px) {
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerLinks a {
+  margin: 0.5rem 0;
+}
+
+.footerLinks a:hover {
+  color: var(--link-hl);
+}
+
+@media (max-width: 768px) {
+  /*] ad on home *************/
+  .adContainer {
+    min-width: 100%;
+  }
+
+  .ad {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .buttonWrap {
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    margin: 0.3rem 4rem;
+  }
+
+  .adButton {
+    margin-top: 0.5rem;
+  }
+  /*] ******************************/
+  /*] FAQ **************************/
+  .faqWrap {
+    min-width: calc(100vw - 4rem);
+    padding: 0 0.5rem;
+  }
+
+  .faqQuestion {
+    width: 100%;
+  }
+
+  .faqAnswer {
+    width: 100%;
+  }
+  /*] ******************************/
+  .divide {
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+
+  .homeLeft,
+  .homeRight {
+    width: 100%;
+  }
+
+  .homeWrap {
+    margin: 0 0.5rem;
+  }
+
+  .homeRight {
+    justify-content: center;
+  }
+
+  .imgBox {
+    max-width: 75%;
+  }
+
+  .hero {
+    margin: 0 0.5rem;
+  }
+
+  .heroWidth {
+    width: 100%;
+  }
+
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+
+  .card {
+    max-width: 100%;
+    padding: 0.8rem 1rem;
+  }
+
+  .badge {
+    left: 0.5rem;
+    font-size: 2.3rem;
+  }
+
+  .badgeFont {
+    font-size: 1.2rem;
+  }
+
+  .endorseContainer {
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+
+  .endorseWrap {
+    flex-direction: column;
+  }
+
+  .learnContainer {
+    flex-direction: column;
+  }
+
+  .learnHead {
+    text-align: center;
+    padding: 0;
+  }
+
+  .donateGrid {
+    flex-direction: column;
+  }
+
+  .footerWrap {
+    min-width: calc(100% - 4rem);
+    flex-direction: column;
+  }
+
+  .footerLinks {
+    margin-top: 1rem;
   }
 }
