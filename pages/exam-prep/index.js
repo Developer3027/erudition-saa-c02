@@ -36,12 +36,6 @@ const ExamPrep = ({ examData }) => {
     if (wrong === true) {
       setWrong((previousWrong) => !previousWrong);
     }
-    // if (right === true) {
-    //   setRight((previousRight) => !previousRight);
-    // }
-    // if (wrong && right) {
-    //   setScore((previousScore) => previousScore - 1);
-    // }
     if (examQuestion + 1 < examData.length) {
       setExamQuestion((previousExamQuestion) => previousExamQuestion + 1);
     }
@@ -96,7 +90,7 @@ const ExamPrep = ({ examData }) => {
 
 export default ExamPrep;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const shuffleQuestions = (examData) => {
     examData.sort(() => Math.random() - 0.5);
   };
