@@ -1,19 +1,23 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-no-comment-textnodes */
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { SidebarData } from '../../data/Sidebar';
+import { useRouter } from 'next/router';
+import { useSession, signIn, signOut } from 'next-auth/react';
+
+import { SidebarData } from '../../data/SidebarData';
 
 import Sidebar from './Sidebar';
 
-import { HiChevronRight } from 'react-icons/hi';
+import { HiChevronRight, HiOutlineUser } from 'react-icons/hi';
 
 const Navbar = () => {
+  const { data: session } = useSession();
   const router = useRouter();
 
-  //? boolean state for sidebar
-  // const [sidebar, setSideBar] = useState(false);
+  //? component boolean state for nav
+  const [showOptions, setShowOptions] = useState(false);
   const [showNav, setShowNav] = useState(false);
 
   return (
@@ -27,23 +31,62 @@ const Navbar = () => {
           className='nav-menu'>
           <HiChevronRight />
         </div>
-        <ul className='nav-quick'>
-          <li className='pl-2'>
-            <Link href='/'>
-              <a>Home</a>
-            </Link>
-          </li>
-          <li className='pl-2'>
-            <Link href='/saa-prep'>
-              <a>Cert Prep</a>
-            </Link>
-          </li>
-          <li className='pl-2'>
-            <Link href='/exam-prep'>
-              <a>Exam Practice</a>
-            </Link>
-          </li>
-        </ul>
+        <div className='nav-wrap'>
+          <ul className='nav-quick'>
+            <li className='pl-2'>
+              <Link href='/'>
+                <a>Home</a>
+              </Link>
+            </li>
+            <li className='pl-2'>
+              <Link href='/saa-prep'>
+                <a>Cert Prep</a>
+              </Link>
+            </li>
+            <li className='pl-2'>
+              <Link href='/exam-prep'>
+                <a>Exam Practice</a>
+              </Link>
+            </li>
+          </ul>
+          <div>
+            <div
+              className='member-wrap'
+              onClick={() => {
+                setShowOptions(!showOptions);
+              }}>
+              {session ? (
+                <img
+                  className='nav-img'
+                  id={session ? 'showOpt' : 'hideOpt'}
+                  src={ session.user.image }
+                  alt={session.user.name}
+                  width='32'
+                  height='32'
+                />
+              ) : (
+                <HiOutlineUser id={!session ? 'showOpt' : 'hideOpt'} />
+              )}
+              <div id={showOptions ? 'showOpt' : 'hideOpt'} className='nav-opt'>
+                {session ? (
+                  <button
+                    onClick={() => {
+                      signOut();
+                    }}>
+                    SignOut
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      signIn();
+                    }}>
+                    SignIn
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
         <nav id={showNav ? 'show' : 'hide'} className='nav-sidebar'>
           <div>
             {SidebarData.map((item, i) => (

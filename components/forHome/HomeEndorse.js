@@ -14,6 +14,7 @@ const HomeEndorse = () => {
                 alt='pic'
                 width={240}
                 height={362}
+                objectFit='contain'
               />
             </div>
           </div>
