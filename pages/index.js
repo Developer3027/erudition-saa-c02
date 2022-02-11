@@ -75,6 +75,7 @@ export default function Home() {
                 alt='pic'
                 width={480}
                 height={719}
+                objectFit='contain'
               />
             </div>
             <div className={styles.badge}>
@@ -95,3 +96,5 @@ export default function Home() {
     </div>
   );
 }
+
+

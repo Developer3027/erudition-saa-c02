@@ -29,6 +29,53 @@
   cursor: pointer;
 }
 
+.nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.member-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .3rem;
+  border: 2px solid var(--light-frame);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.nav-opt {
+  position: absolute;
+  margin-top: 5px;
+  top: 2.5rem;
+  right: .02rem;
+  list-style: none;
+  
+  transition: 250ms;
+  z-index: 10;
+}
+
+.nav-opt button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--light-bg);
+  font-size: 1rem;
+  border: none;
+  padding: .5rem 2rem;
+}
+
+.nav-img {
+  border-radius: 50%;
+}
+
 .nav-quick {
   display: flex;
   list-style: none;
