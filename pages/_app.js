@@ -2,6 +2,7 @@ import { Provider } from 'react-redux';
 import store from '../redux/store';
 import Head from 'next/head';
 import { SessionProvider } from 'next-auth/react';
+import '@stripe/stripe-js';
 
 import Navbar from '../components/forLayout/Navbar';
 import Footer from '../components/forLayout/Footer';
