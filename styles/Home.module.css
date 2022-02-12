@@ -409,12 +409,17 @@
 
 .donateListHead {
   text-align: center;
+  color: var(--orange);
 }
 
 .donateList li {
   margin-top: 0.5rem;
   list-style: none;
   margin-left: -0.3rem;
+}
+
+.donateHL {
+  color: var(--red);
 }
 
 .donateBtn {
