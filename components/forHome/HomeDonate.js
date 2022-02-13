@@ -7,6 +7,7 @@ import styles from '../../styles/Home.module.css';
 import { HiOutlineQuestionMarkCircle } from 'react-icons/hi';
 
 let stripePromise
+var host = window.location.origin;
 
 const getStripe = () => {
   if (!stripePromise) {
@@ -42,22 +43,22 @@ const HomeDonate = () => {
   const checkoutOptionsBasic = {
     lineItems: [itemBasic],
     mode: 'payment',
-    successUrl: `${window.location.origin}/success`,
-    cancelUrl: `${window.location.origin}`,
+    successUrl: `${host}/success`,
+    cancelUrl: `${host}`,
   };
 
   const checkoutOptionsPlus = {
     lineItems: [itemPlus],
     mode: 'payment',
-    successUrl: `${window.location.origin}/success`,
-    cancelUrl: `${window.location.origin}`
+    successUrl: `${host}/success`,
+    cancelUrl: `${host}`
   };
 
   const checkoutOptionsMember = {
     lineItems: [itemMember],
     mode: 'payment',
-    successUrl: `${window.location.origin}/success`,
-    cancelUrl: `${window.location.origin}`
+    successUrl: `${host}/success`,
+    cancelUrl: `${host}`
   };
 
   const redirectToCheckoutBasic = async () => {
