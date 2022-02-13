@@ -42,22 +42,22 @@ const HomeDonate = () => {
   const checkoutOptionsBasic = {
     lineItems: [itemBasic],
     mode: 'payment',
-    successUrl: 'https://erudition-saa-c02-fdibs8rch-dev3027.vercel.app/success',
-    cancelUrl: 'https://erudition-saa-c02-fdibs8rch-dev3027.vercel.app',
+    successUrl: `${window.location.origin}/success`,
+    cancelUrl: `${window.location.origin}`,
   };
 
   const checkoutOptionsPlus = {
     lineItems: [itemPlus],
     mode: 'payment',
-    successUrl: 'https://erudition-saa-c02-fdibs8rch-dev3027.vercel.app/success',
-    cancelUrl: 'https://erudition-saa-c02-fdibs8rch-dev3027.vercel.app',
+    successUrl: `${window.location.origin}/success`,
+    cancelUrl: `${window.location.origin}`
   };
 
   const checkoutOptionsMember = {
     lineItems: [itemMember],
     mode: 'payment',
-    successUrl: 'https://erudition-saa-c02-fdibs8rch-dev3027.vercel.app/success',
-    cancelUrl: 'https://erudition-saa-c02-fdibs8rch-dev3027.vercel.app',
+    successUrl: `${window.location.origin}/success`,
+    cancelUrl: `${window.location.origin}`
   };
 
   const redirectToCheckoutBasic = async () => {
