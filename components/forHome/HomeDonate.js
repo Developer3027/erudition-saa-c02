@@ -7,7 +7,7 @@ import styles from '../../styles/Home.module.css';
 import { HiOutlineQuestionMarkCircle } from 'react-icons/hi';
 
 let stripePromise
-var host = window.location.origin;
+
 
 const getStripe = () => {
   if (!stripePromise) {
@@ -17,6 +17,7 @@ const getStripe = () => {
 };
 
 const HomeDonate = () => {
+  let host = window.location.origin;
   const [loading, setLoading] =useState(false);
   const [support, setSupport] = useState(true);
   const [member, setMember] = useState(true);
