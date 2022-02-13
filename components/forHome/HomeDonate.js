@@ -17,7 +17,6 @@ const getStripe = () => {
 };
 
 const HomeDonate = () => {
-  let host = window.location.origin;
   const [loading, setLoading] =useState(false);
   const [support, setSupport] = useState(true);
   const [member, setMember] = useState(true);
@@ -44,22 +43,22 @@ const HomeDonate = () => {
   const checkoutOptionsBasic = {
     lineItems: [itemBasic],
     mode: 'payment',
-    successUrl: `${host}/success`,
-    cancelUrl: `${host}`,
+    successUrl: 'http://localhost:3000/success',
+    cancelUrl: 'http://localhost:3000'
   };
 
   const checkoutOptionsPlus = {
     lineItems: [itemPlus],
     mode: 'payment',
-    successUrl: `${host}/success`,
-    cancelUrl: `${host}`
+    successUrl: 'http://localhost:3000/success',
+    cancelUrl: 'http://localhost:3000'
   };
 
   const checkoutOptionsMember = {
     lineItems: [itemMember],
     mode: 'payment',
-    successUrl: `${host}/success`,
-    cancelUrl: `${host}`
+    successUrl: 'http://localhost:3000/success',
+    cancelUrl: 'http://localhost:3000'
   };
 
   const redirectToCheckoutBasic = async () => {
