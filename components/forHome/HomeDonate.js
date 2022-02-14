@@ -26,7 +26,7 @@ const HomeDonate = () => {
 
   //*] 5 dollar donate */
   const itemBasic = {
-    price: 'price_1KSNlSCsfjcjCsMpk7dswfa3',
+    price: 'price_1KT5Q2CsfjcjCsMpqyxVom8n',
     quantity: 1
   };
   //*] 10 dollar donate */
