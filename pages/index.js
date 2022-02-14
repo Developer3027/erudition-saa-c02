@@ -8,7 +8,7 @@ import HomeFAQ from '../components/forHome/HomeFAQ';
 import HomeAd from '../components/forHome/HomeAd';
 import HomeLearningAd from '../components/forHome/HomeLearningAd';
 import HomeDonate from '../components/forHome/HomeDonate';
-import HomeContact from '../components/forHome/HomeContact';
+// import HomeContact from '../components/forHome/HomeContact';
 
 export default function Home() {
   return (
@@ -91,7 +91,6 @@ export default function Home() {
         <HomeFAQ />
         <HomeDonate />
         <HomeAd />
-        <HomeContact />
       </main>
     </div>
   );
