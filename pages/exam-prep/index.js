@@ -92,14 +92,11 @@ const ExamPrep = ({ examData }) => {
 export default ExamPrep;
 
 export async function getStaticProps() {
+  const examData = ExamPractice;
+
   const shuffleQuestions = (examData) => {
     examData.sort(() => Math.random() - 0.5);
   };
-
-  // const res = await fetch(`http://localhost:3000/api/exam`);
-  // const data = await res.json();
-  const examData = JSON.stringify(ExamPractice);
-
   shuffleQuestions(examData);
 
   return {
