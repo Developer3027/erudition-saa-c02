@@ -116,6 +116,13 @@
   border-radius: 3px;
 }
 
+.testFinal {
+  background-color: var(--burnt);
+  color: var(--orange);
+  border-radius: .3rem;
+  padding: .5rem;
+}
+
 /*] *********************************/
 /*] Quiz ****************************/
 .quizContainer {

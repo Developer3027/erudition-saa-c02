@@ -10,6 +10,7 @@ const ExamPrep = ({ examData }) => {
   const [wrong, setWrong] = useState(false);
   const [examQuestion, setExamQuestion] = useState(0);
   const [score, setScore] = useState(0);
+  const [final, setFinal] = useState(0);
 
   const answerExamQuestion = (correct) => {
     if (correct) {
@@ -31,6 +32,9 @@ const ExamPrep = ({ examData }) => {
   };
 
   const nextQuestion = () => {
+    console.log(final);
+    console.log(examData.length)
+    console.log(examQuestion)
     setMsg('');
     setErrorMsg('');
     setExplain('');
@@ -39,6 +43,8 @@ const ExamPrep = ({ examData }) => {
     }
     if (examQuestion + 1 < examData.length) {
       setExamQuestion((previousExamQuestion) => previousExamQuestion + 1);
+    } else {
+      setFinal((score / examData.length) * 100);
     }
   };
 
@@ -62,17 +68,27 @@ const ExamPrep = ({ examData }) => {
         <h2>
           {examQuestion + 1} of {examData.length} Score: {score}
         </h2>
-        <h3>{examData[examQuestion].q}</h3>
-        <ul>
-          {examData[examQuestion].options.map((option) => (
-            <li
-              key={option.id}
-              className={styles.testLi}
-              onClick={() => answerExamQuestion(option.correct)}>
-              {option.text}
-            </li>
-          ))}
-        </ul>
+
+        {final ? (
+          <div className={styles.testFinal}>
+            <h3>Your final score was {score} out of {examData.length} or {final}%.</h3>
+            <p>Refresh the page and try again!</p>
+          </div>
+        ) : (
+          <>
+            <h3>{examData[examQuestion].q}</h3>
+            <ul>
+              {examData[examQuestion].options.map((option) => (
+                <li
+                  key={option.id}
+                  className={styles.testLi}
+                  onClick={() => answerExamQuestion(option.correct)}>
+                  {option.text}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
         {msg && (
           <p className={styles.testMsg} onClick={() => nextQuestion()}>
             {msg}
