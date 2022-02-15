@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ExamPractice } from '../../data/ExamPracticeQuestions';
 
 import styles from '../../styles/Test.module.css';
 
@@ -95,9 +96,9 @@ export async function getServerSideProps() {
     examData.sort(() => Math.random() - 0.5);
   };
 
-  const res = await fetch(`http://localhost:3000/api/exam`);
-  const data = await res.json();
-  const examData = data;
+  // const res = await fetch(`http://localhost:3000/api/exam`);
+  // const data = await res.json();
+  const examData = JSON.stringify(ExamPractice);
 
   shuffleQuestions(examData);
 
