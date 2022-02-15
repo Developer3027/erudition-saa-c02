@@ -604,5 +604,237 @@ export const ExamPractice = [
     ],
     explain:
       "The question doesn't state if the subnet containing the instance is public or private. An internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between your VPC and the internet. To enable access to or from the internet for instances in a subnet in a VPC, you must do the following: \u000D \u2022 Attach an internet gateway to your VPC.\u000D \u2022 Add a route to your subnet's route table that directs internet-bound traffic to the internet gateway. If a subnet is associated with a route table that has a route to an internet gateway, it's known as a public subnet. If a subnet is associated with a route table that does not have a route to an internet gateway, it's known as a private subnet.\u000D \u2022 Ensure that instances in your subnet have a globally unique IP address (public IPv4 address, Elastic IP address, or IPv6 address).\u000D \u2022 Ensure that your network access control lists and security group rules allow the relevant traffic to flow to and from your instance. \u000D \u2022 In your subnet route table, you can specify a route for the internet gateway to all destinations not explicitly known to the route table (0.0.0.0/0 for IPv4 or ::/0 for IPv6). Alternatively, you can scope the route to a narrower range of IP addresses. For example, the public IPv4 addresses of your company's public endpoints outside of AWS, or the elastic IP addresses of other Amazon EC2 instances outside your VPC. To enable communication over the Internet for IPv4, your instance must have a public IPv4 address or an Elastic IP address that's associated with a private IPv4 address on your instance. Your instance is only aware of the private (internal) IP address space defined within the VPC and subnet. The internet gateway logically provides the one-to-one NAT on behalf of your instance so that when traffic leaves your VPC subnet and goes to the Internet, the reply address field is set to the public IPv4 address or elastic IP address of your instance and not its private IP address. Conversely, traffic that's destined for the public IPv4 address or elastic IP address of your instance has its destination address translated into the instance's private IPv4 address before the traffic is delivered to the VPC. To enable communication over the Internet for IPv6, your VPC and subnet must have an associated IPv6 CIDR block, and your instance must be assigned an IPv6 address from the range of the subnet. IPv6 addresses are globally unique, and therefore public by default."
+  },
+  {
+    id: '23',
+    cat: '1',
+    q: 'A database outage has been very costly to your organization. You have been tasked with configuring a more highly-available architecture. The main requirement is that the chosen architecture needs to meet an aggressive RTO in case of disaster. You have decided to use an RDS Multi-AZ deployment. How is the replication handled for RDS Multi-AZ?',
+    options: [
+      {
+        id: 'a',
+        text: 'You can configure a standby replica in a different Availability Zone and send traffic synchronously or asynchronously depending on your cost considerations.',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Amazon RDS automatically provisions and maintains a synchronous standby replica in a different Region.',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'Amazon RDS automatically provisions and maintains a synchronous standby replica in a different Availability Zone.',
+        correct: true
+      },
+      {
+        id: 'd',
+        text: 'Amazon RDS automatically provisions and maintains an asynchronous standby replica in a different Availability Zone.',
+        correct: false
+      }
+    ],
+    explain:
+      "Amazon RDS provides high availability and failover support for DB instances using Multi-AZ deployments. Amazon RDS uses several different technologies to provide failover support. Multi-AZ deployments for MariaDB, MySQL, Oracle, and PostgreSQL DB instances use Amazon's failover technology. SQL Server DB instances use SQL Server Database Mirroring (DBM) or Always On Availability Groups (AGs). In a Multi-AZ deployment, Amazon RDS automatically provisions and maintains a synchronous standby replica in a different Availability Zone. The primary DB instance is synchronously replicated across Availability Zones to a standby replica to provide data redundancy, eliminate I/O freezes, and minimize latency spikes during system backups. Running a DB instance with high availability can enhance availability during planned system maintenance, and help protect your databases against DB instance failure and Availability Zone disruption."
+  },
+  {
+    id: '24',
+    cat: '2',
+    q: 'You have just started working at a company that is migrating from a physical data center into AWS. Currently, you have 25 TB of data that needs to be moved to an S3 bucket. Your company has just finished setting up a 1 GB Direct Connect drop, but you do not have a VPN currently up and running. This data needs to be encrypted during transit and at rest and must be uploaded to the S3 bucket within 21 days. How can you meet these requirements?',
+    options: [
+      {
+        id: 'a',
+        text: 'Upload the data to S3 using your public internet connection.',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Order a Snowcone device to transmit the data.',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'Upload the data using Direct Connect.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Use a Snowball device to transmit the data.',
+        correct: true
+      }
+    ],
+    explain:
+      'This would be the perfect choice to transmit your data. Snowball encrypts your data, so all the security and speed requirements would be met.'
+  },
+  {
+    id: '25',
+    cat: '1',
+    q: 'Your company has decided to migrate a SQL Server database to a newly-created AWS account. Which service can be used to migrate the database?',
+    options: [
+      {
+        id: 'a',
+        text: 'DynamoDB',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Elasticache',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'AWS RDS',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Database Migration Service',
+        correct: true
+      }
+    ],
+    explain:
+      'AWS Database Migration Service helps you migrate databases to AWS quickly and securely. The source database remains fully operational during the migration, minimizing downtime to applications that rely on the database. The AWS Database Migration Service can migrate your data to and from the most widely used commercial and open-source databases. AWS Database Migration Service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle or Microsoft SQL Server to Amazon Aurora. With AWS Database Migration Service, you can continuously replicate your data with high availability and consolidate databases into a petabyte-scale data warehouse by streaming data to Amazon Redshift and Amazon S3.'
+  },
+  {
+    id: '26',
+    cat: '2',
+    q: 'You are designing an architecture which will house an Auto Scaling Group of EC2 instances. The application hosted on the instances is expected to be extremely popular. Forecasts for traffic to this site expect very high traffic and you will need a load balancer to handle tens of millions of requests per second while maintaining high throughput at ultra low latency. You need to select the type of load balancer to front your Auto Scaling Group to meet this high traffic requirement. Which load balancer will you select?',
+    options: [
+      {
+        id: 'a',
+        text: 'You will need a Classic Load Balancer to meet this requirement.',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'You will need an Application Load Balancer to meet this requirement.',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'All the AWS load balancers meet the requirement and perform the same.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'You will select a Network Load Balancer to meet this requirement.',
+        correct: true
+      }
+    ],
+    explain:
+      'If extreme performance is needed for your application, AWS recommends that you use a Network Load Balancer. Network Load Balancer operates at the connection level (Layer 4), routing connections to targets (Amazon EC2 instances, microservices, and containers) within Amazon VPC, based on IP protocol data. Ideal for load balancing of both TCP and UDP traffic, Network Load Balancer is capable of handling millions of requests per second while maintaining ultra-low latencies. Network Load Balancer is optimized to handle sudden and volatile traffic patterns while using a single static IP address per Availability Zone. It is integrated with other popular AWS services such as Auto Scaling, Amazon EC2 Container Service (ECS), Amazon CloudFormation, and AWS Certificate Manager (ACM).'
+  },
+  {
+    id: '27',
+    cat: '1',
+    q: 'A small startup company has begun using AWS for all of its IT infrastructure. The company has two AWS Solutions Architects, and they are very proficient with AWS deployments. They want to choose a deployment service that best meets the given requirements. Those requirements include version control of their infrastructure documentation and granular control of all of the services to be deployed. Which AWS service would best meet these requirements?',
+    options: [
+      {
+        id: 'a',
+        text: 'Terraform',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'OpsWorks',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'CloudFormation',
+        correct: true
+      },
+      {
+        id: 'd',
+        text: 'Elastic Beanstalk',
+        correct: false
+      }
+    ],
+    explain:
+      'CloudFormation is infrastructure as code, and the CloudFormation feature of templates allows this infrastructure as code to be version controlled. While it can be argued that both OpsWorks and Elastic Beanstalk provide some granular control of services, this is not the main feature of either. Both OpsWorks and Elastic Beanstalk, to varying degrees, allow some detailed configuration. How is AWS CloudFormation different from AWS Elastic Beanstalk? These services are designed to complement each other. AWS Elastic Beanstalk provides an environment to deploy and run applications in the cloud. It is integrated with developer tools and provides a one-stop experience for you to manage the lifecycle of your applications. AWS CloudFormation is a convenient provisioning mechanism for a broad range of AWS and third-party resources. It supports the infrastructure needs of many different types of applications, such as existing enterprise applications, legacy applications, applications built using a variety of AWS resources, and container-based solutions (including those built using AWS Elastic Beanstalk). AWS CloudFormation supports Elastic Beanstalk application environments as one of the AWS resource types. This allows you, for example, to create and manage an AWS Elastic Beanstalk–hosted application along with an RDS database to store the application data. In addition to RDS instances, any other supported AWS resource can be added to the group as well.'
+  },
+  {
+    id: '28',
+    cat: '3',
+    q: 'You have been evaluating the NACLs in your company. Currently, you are looking at the default network ACL. Which statement is true regarding subnets and NACLs?',
+    options: [
+      {
+        id: 'a',
+        text: 'Only public subnets can use the default NACL.',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: "ach subnet in your VPC must be associated with a network ACL. If you don't explicitly associate a subnet with a network ACL, the subnet is automatically associated with the default network ACL.",
+        correct: true
+      },
+      {
+        id: 'c',
+        text: 'The default NACL will always be associated with each subnet.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'You have to delete the default NACL before creating a custom NACL to associate with a subnet.',
+        correct: false
+      }
+    ],
+    explain:
+      "Each subnet in your VPC must be associated with a network ACL. If you don't explicitly associate a subnet with a network ACL, the subnet is automatically associated with the default network ACL."
+  },
+  {
+    id: '29',
+    cat: '1',
+    q: 'An accounting company has big data applications for analyzing actuary data. The company is migrating some of its services to the cloud, and for the foreseeable future, will be operating in a hybrid environment. They need a storage service that provides a simple, scalable, fully managed elastic NFS file system for use with AWS Cloud services and on-premises resources. Which AWS service can meet these requirements?',
+    options: [
+      {
+        id: 'a',
+        text: 'EFS',
+        correct: true
+      },
+      {
+        id: 'b',
+        text: 'Glacier',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'S3',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'EBS',
+        correct: false
+      }
+    ],
+    explain:
+      "Amazon Elastic File System (Amazon EFS) provides a simple, scalable, fully managed elastic NFS file system for use with AWS Cloud services and on-premises resources. It is built to scale on-demand to petabytes without disrupting applications, growing and shrinking automatically as you add and remove files, eliminating the need to provision and manage capacity to accommodate growth. Amazon EFS offers 2 storage classes: the Standard storage class and the Infrequent Access storage class (EFS IA). EFS IA provides price/performance that's cost-optimized for files not accessed every day. By simply enabling EFS Lifecycle Management on your file system, files not accessed according to the lifecycle policy you choose will be automatically and transparently moved into EFS IA.Amazon Elastic File System (Amazon EFS) provides a simple, scalable, fully managed elastic NFS file system for use with AWS Cloud services and on-premises resources. It is built to scale on-demand to petabytes without disrupting applications, growing and shrinking automatically as you add and remove files, eliminating the need to provision and manage capacity to accommodate growth. Amazon EFS offers 2 storage classes: the Standard storage class and the Infrequent Access storage class (EFS IA). EFS IA provides price/performance that's cost-optimized for files not accessed every day. By simply enabling EFS Lifecycle Management on your file system, files not accessed according to the lifecycle policy you choose will be automatically and transparently moved into EFS IA."
+  },
+  {
+    id: '30',
+    cat: '2',
+    q: 'You have been assigned to create an architecture which uses load balancers to direct traffic to an Auto Scaling Group of EC2 instances across multiple Availability Zones. You were considering using an Application Load Balancer, but some of the requirements you have been given seem to point to a Classic Load Balancer. Which requirement would be better served by an Application Load Balancer?',
+    options: [
+      {
+        id: 'a',
+        text: 'Support for EC2-Classic.',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Path-based routing.',
+        correct: true
+      },
+      {
+        id: 'c',
+        text: 'Support for TCP and SSL listeners.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Support for sticky sessions using application-generated cookies.',
+        correct: false
+      }
+    ],
+    explain:
+      'Using an Application Load Balancer is preferred over a Classic Load Balancer. All feature supported by the Classic have been addressed and improved upon with the Application Load Balancer. With ALB you have support for path-based routing, support for host-based routing, support for routing based on fields in the request, support for routing requests to multiple applications on a single EC2 instance, support for redirecting requests from one url to another, support for returning custom HTTP response, support for registering targets by IP address, support for registering Lambda functions, support for the load balancer to authenticate users, support for containerized applications, support for monitoring the health of services. Also access logs contain additional info and are stored in a compressed format. Improved load balancer performance.'
   }
 ];
