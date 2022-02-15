@@ -91,7 +91,7 @@ const ExamPrep = ({ examData }) => {
 
 export default ExamPrep;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const shuffleQuestions = (examData) => {
     examData.sort(() => Math.random() - 0.5);
   };
