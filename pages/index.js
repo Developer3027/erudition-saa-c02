@@ -38,7 +38,7 @@ export default function Home() {
             <div className={styles.hero}>
               <h3>Improve your chances of passing the SAA-C02</h3>
               <p className={styles.heroWidth}>
-                Think of this as cliff notes to the a cloud guru certification
+                Think of this as cliff notes to the ACloudGuru certification
                 course for the AWS Solution Architect Associate. I recommend you
                 take that course and review this site as cliff notes.
               </p>
