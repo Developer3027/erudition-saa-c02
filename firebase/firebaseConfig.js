@@ -1,4 +1,5 @@
-//import { initializeApp } from 'firebase/app';
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
 //import { getAuth } from 'firebase/auth';
 
 const firebaseCredentials = {
@@ -11,6 +12,8 @@ const firebaseCredentials = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
-//const app = initializeApp(firebaseCredentials);
+const app = initializeApp(firebaseCredentials);
 
 //export const auth = getAuth(app);
+
+export const db = getFirestore();
