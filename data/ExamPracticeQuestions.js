@@ -836,5 +836,295 @@ export const ExamPractice = [
     ],
     explain:
       'Using an Application Load Balancer is preferred over a Classic Load Balancer. All feature supported by the Classic have been addressed and improved upon with the Application Load Balancer. With ALB you have support for path-based routing, support for host-based routing, support for routing based on fields in the request, support for routing requests to multiple applications on a single EC2 instance, support for redirecting requests from one url to another, support for returning custom HTTP response, support for registering targets by IP address, support for registering Lambda functions, support for the load balancer to authenticate users, support for containerized applications, support for monitoring the health of services. Also access logs contain additional info and are stored in a compressed format. Improved load balancer performance.'
+  },
+  {
+    id: '31',
+    cat: '1',
+    q: 'A small startup company has begun using AWS for all of its IT infrastructure. The company has two AWS Solutions Architects, and they are very proficient with AWS deployments. They want to choose a deployment service that best meets the given requirements. Those requirements include version control of their infrastructure documentation and granular control of all of the services to be deployed. Which AWS service would best meet these requirements?',
+    options: [
+      {
+        id: 'a',
+        text: 'Elastic Beanstalk',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'OpsWorks',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'Terraform',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'CloudFormation',
+        correct: true
+      }
+    ],
+    explain:
+      'Correct. CloudFormation is infrastructure as code, and the CloudFormation feature of templates allows this infrastructure as code to be version controlled. While it can be argued that both OpsWorks and Elastic Beanstalk provide some granular control of services, this is not the main feature of either. Both OpsWorks and Elastic Beanstalk, to varying degrees, allow some detailed configuration. How is AWS CloudFormation different from AWS Elastic Beanstalk? These services are designed to complement each other. AWS Elastic Beanstalk provides an environment to deploy and run applications in the cloud. It is integrated with developer tools and provides a one-stop experience for you to manage the lifecycle of your applications. AWS CloudFormation is a convenient provisioning mechanism for a broad range of AWS and third-party resources. It supports the infrastructure needs of many different types of applications, such as existing enterprise applications, legacy applications, applications built using a variety of AWS resources, and container-based solutions (including those built using AWS Elastic Beanstalk). AWS CloudFormation supports Elastic Beanstalk application environments as one of the AWS resource types. This allows you, for example, to create and manage an AWS Elastic Beanstalk–hosted application along with an RDS database to store the application data. In addition to RDS instances, any other supported AWS resource can be added to the group as well'
+  },
+  {
+    id: '32',
+    cat: '1',
+    q: "A company has a great deal of data in S3 buckets for which they want to create a database. Creating the RDS database, normalizing the data, and migrating to the RDS database will take time and is the long-term plan. But there's an immediate need to query this data to retrieve information necessary for an audit. Which AWS service will enable querying data in S3 using standard SQL commands?",
+    options: [
+      {
+        id: 'a',
+        text: 'No such service, but there are third-party tools',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Amazon SQL Connector',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'Amazon Athena',
+        correct: true
+      },
+      {
+        id: 'd',
+        text: 'DynamoDB',
+        correct: false
+      }
+    ],
+    explain:
+      'Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to manage, and you only pay for the queries you run. Athena is easy to use. Simply point to your data in Amazon S3, define the schema, and start querying using standard SQL. Most results are delivered within seconds. With Athena, there’s no need for complex ETL jobs to prepare your data for analysis. This makes it easy for anyone with SQL skills to quickly analyze large-scale datasets.'
+  },
+  {
+    id: '33',
+    cat: '1',
+    q: 'Your company is using a hybrid configuration because there are some legacy applications which are not easily converted and migrated to AWS. With this configuration comes a typical scenario where the legacy apps must maintain the same private IP address and MAC address. You are attempting to convert the application to the Cloud and have configured an EC2 instance to house the application. What you are currently testing is removing the ENI from the legacy instance and attaching it to the EC2 instance. You want to attempt a warm attach. What does this mean?',
+    options: [
+      {
+        id: 'a',
+        text: 'Attach the ENI before the public IP address is assigned.',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: "Attach the ENI to an instance when it's running",
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'Attach the ENI when the instance is being launched.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Attach the ENI to an instance when it is stopped.',
+        correct: true
+      }
+    ],
+    explain:
+      "Some best practices for configuring network interfaces: You can attach a network interface to an instance when it's running (hot attach), when it's stopped (warm attach), or when the instance is being launched (cold attach). You can detach secondary network interfaces when the instance is running or stopped. However, you can't detach the primary network interface. You can move a network interface from 1 instance to another, if the instances are in the same Availability Zone and VPC but in different subnets. When launching an instance using the CLI, API, or an SDK, you can specify the primary network interface and additional network interfaces. Launching an Amazon Linux or Windows Server instance with multiple network interfaces automatically configures interfaces, private IPv4 addresses, and route tables on the operating system of the instance. A warm or hot attach of an additional network interface may require you to manually bring up the second interface, configure the private IPv4 address, and modify the route table accordingly. Instances running Amazon Linux or Windows Server automatically recognize the warm or hot attach and configure themselves. Attaching another network interface to an instance (for example, a NIC teaming configuration) cannot be used as a method to increase or double the network bandwidth to or from the dual-homed instance. If you attach 2 or more network interfaces from the same subnet to an instance, you may encounter networking issues such as asymmetric routing. If possible, use a secondary private IPv4 address on the primary network interface instead."
+  },
+  {
+    id: '34',
+    cat: '1',
+    q: 'A software company has created an application to capture service requests from users and also enhancement requests. The application is deployed on an Auto Scaling group of EC2 instances fronted by an Application Load Balancer. The Auto Scaling group has scaled to maximum capacity, but there are still requests being lost. The cost of these instances should remain the same. What step can the company take to ensure requests aren’t lost?',
+    options: [
+      {
+        id: 'a',
+        text: 'Use an SQS queue with the Auto Scaling group to capture all requests.',
+        correct: true
+      },
+      {
+        id: 'b',
+        text: 'Use spot instances to save money.',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'Use larger instances in the Auto Scaling group.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Use a Network Load Balancer instead for faster throughput.',
+        correct: false
+      }
+    ],
+    explain:
+      "There are some scenarios where you might think about scaling in response to activity in an Amazon SQS queue. For example, suppose that you have a web app that lets users upload images and use them online. In this scenario, each image requires resizing and encoding before it can be published. The app runs on EC2 instances in an Auto Scaling group, and it's configured to handle your typical upload rates. Unhealthy instances are terminated and replaced to maintain current instance levels at all times. The app places the raw bitmap data of the images in an SQS queue for processing. It processes the images and then publishes the processed images where they can be viewed by users. The architecture for this scenario works well if the number of image uploads doesn't vary over time. But if the number of uploads changes over time, you might consider using dynamic scaling to scale the capacity of your Auto Scaling group."
+  },
+  {
+    id: '35',
+    cat: '1',
+    q: 'A company has an Auto Scaling group of EC2 instances hosting their retail sales application. Any significant downtime for this application can result in large losses of profit. Therefore, the architecture also includes an Application Load Balancer and an RDS database in a Multi-AZ deployment. What will happen to preserve high availability if the primary database fails?',
+    options: [
+      {
+        id: 'a',
+        text: 'The CNAME is switched from the primary db instance to the secondary.',
+        correct: true
+      },
+      {
+        id: 'b',
+        text: 'The Elastic IP address for the primary database is moved to the secondary database.',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'Route 53 points the CNAME to the secondary database instance.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'A Lambda function kicks off a CloudFormation template to deploy a backup database.',
+        correct: false
+      }
+    ],
+    explain:
+      'Amazon RDS Multi-AZ deployments provide enhanced availability and durability for RDS database (DB) instances, making them a natural fit for production database workloads. When you provision a Multi-AZ DB Instance, Amazon RDS automatically creates a primary DB Instance and synchronously replicates the data to a standby instance in a different Availability Zone (AZ). Each AZ runs on its own physically distinct, independent infrastructure, and is engineered to be highly reliable. In case of an infrastructure failure, Amazon RDS performs an automatic failover to the standby (or to a read replica in the case of Amazon Aurora), so that you can resume database operations as soon as the failover is complete. Since the endpoint for your DB Instance remains the same after a failover, your application can resume database operation without the need for manual administrative intervention. Failover is automatically handled by Amazon RDS so that you can resume database operations as quickly as possible without administrative intervention. When failing over, Amazon RDS simply flips the canonical name record (CNAME) for your DB instance to point at the standby, which is in turn promoted to become the new primary.'
+  },
+  {
+    id: '36',
+    cat: '1',
+    q: 'A company has an auto scaling group of EC2 instances hosting their retail sales application. Any significant downtime for this application can result in large losses of profit. Therefore the architecture also includes an Application Load Balancer and an RDS database in a Multi-AZ deployment. The company has a very aggressive Recovery Time Objective (RTO) in case of disaster. How long will a failover of an RDS database typically complete?',
+    options: [
+      {
+        id: 'a',
+        text: 'Almost instantly',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Within an hour',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'Under 10 minutes',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'One to two minutes',
+        correct: true
+      }
+    ],
+    explain:
+      'Q: What happens during Multi-AZ failover and how long does it take? Failover is automatically handled by Amazon RDS so that you can resume database operations as quickly as possible without administrative intervention. When failing over, Amazon RDS simply flips the canonical name record (CNAME) for your DB instance to point at the standby, which is in turn promoted to become the new primary. We encourage you to follow best practices and implement database connection retry at the application layer. Failovers, as defined by the interval between the detection of the failure on the primary and the resumption of transactions on the standby, typically complete within one to two minutes. Failover time can also be affected by whether large uncommitted transactions must be recovered; the use of adequately large instance types is recommended with Multi-AZ for best results. AWS also recommends the use of Provisioned IOPS with Multi-AZ instances for fast, predictable, and consistent throughput performance.'
+  },
+  {
+    id: '37',
+    cat: '1',
+    q: 'Your company is using a hybrid configuration because there are some legacy applications which are not easily converted and migrated to AWS. With this configuration comes a typical scenario where the legacy apps must maintain the same private IP address and MAC address. You are attempting to convert the application to the cloud and have configured an EC2 instance to house the application. What you are currently testing is removing the ENI from the legacy instance and attaching it to the EC2 instance. You want to attempt a cold attach. What does this mean?',
+    options: [
+      {
+        id: 'a',
+        text: "Attach ENI to an instance when it's running",
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Attach ENI when it’s stopped.',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'Attach ENI when the instance is being launched.',
+        correct: true
+      },
+      {
+        id: 'd',
+        text: 'Attach ENI before the public IP address is assigned.',
+        correct: false
+      }
+    ],
+    explain:
+      "You can attach a network interface to an instance when it's running (hot attach), when it's stopped (warm attach), or when the instance is being launched (cold attach). You can detach secondary network interfaces when the instance is running or stopped. However, you can't detach the primary network interface. You can move a network interface from 1 instance to another if the instances are in the same Availability Zone and VPC but in different subnets. When launching an instance using the CLI, API, or an SDK, you can specify the primary network interface and additional network interfaces. Launching an Amazon Linux or Windows Server instance with multiple network interfaces automatically configures interfaces, private IPv4 addresses, and route tables on the operating system of the instance. A warm or hot attach of an additional network interface may require you to manually bring up the second interface, configure the private IPv4 address, and modify the route table accordingly. Instances running Amazon Linux or Windows Server automatically recognize the warm or hot attach and configure themselves. Attaching another network interface to an instance (for example, a NIC teaming configuration) cannot be used as a method to increase or double the network bandwidth to or from the dual-homed instance. If you attach 2 or more network interfaces from the same subnet to an instance, you may encounter networking issues such as asymmetric routing. If possible, use a secondary private IPv4 address on the primary network interface instead."
+  },
+  {
+    id: '38',
+    cat: '2',
+    q: 'Your company uses IoT devices installed in businesses to provide those business real-time data for analysis. You have decided to use AWS Kinesis Data Firehose to stream the data to multiple backend storing services for analytics. Which service listed is not a viable solution to stream the real time data to?',
+    options: [
+      {
+        id: 'a',
+        text: 'S3',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Athena',
+        correct: true
+      },
+      {
+        id: 'c',
+        text: 'Redshift',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'ElasticSearch',
+        correct: false
+      }
+    ],
+    explain:
+      'Amazon Athena is correct because Amazon Kinesis Data Firehose cannot load streaming data to Athena. Amazon Kinesis Data Firehose is the easiest way to load streaming data into data stores and analytics tools. It can capture, transform, and load streaming data into Amazon S3, Amazon Redshift, Amazon Elasticsearch Service, and Splunk, enabling near real-time analytics with existing business intelligence tools and dashboards you’re already using today. It is a fully managed service that automatically scales to match the throughput of your data and requires no ongoing administration. It can also batch, compress, and encrypt the data before loading it, minimizing the amount of storage used at the destination and increasing security.'
+  },
+  {
+    id: '39',
+    cat: '2',
+    q: "Your boss has tasked you with decoupling your existing web frontend from the backend. Both applications run on EC2 instances. After you investigate the existing architecture, you find that (on average) the backend resources are processing about 50,000 requests per second and will need something that supports their extreme level of message processing. It's also important that each request is processed only 1 time. What can you do to decouple these resources?",
+    options: [
+      {
+        id: 'a',
+        text: 'Use S3 to store the messages being sent between the EC2 instances.',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Use SQS FIFO to decouple the applications.',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'Use SQS Standard. Include a unique ordering ID in each message, and have the backend application use this to deduplicate messages',
+        correct: true
+      },
+      {
+        id: 'd',
+        text: 'Upsize your EC2 instances to reduce the message load on the backend servers.',
+        correct: false
+      }
+    ],
+    explain:
+      "This would be a great choice, as SQS Standard can handle this level of extreme performance. If the application didn't require this level of performance, then SQS FIFO would be the better and easier choice, but SQS FIFO has a batch limit of 3,000 messages per second."
+  },
+  {
+    id: '40',
+    cat: '2',
+    q: 'You have just started working at a company that is migrating from a physical data center into AWS. Currently, you have 25 TB of data that needs to be moved to an S3 bucket. Your company has just finished setting up a 1 GB Direct Connect drop, but you do not have a VPN currently up and running. This data needs to be encrypted during transit and at rest and must be uploaded to the S3 bucket within 21 days. How can you meet these requirements?',
+    options: [
+      {
+        id: 'a',
+        text: 'Order a Snowcone device to transmit the data.',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Use a Snowball device to transmit the data.',
+        correct: true
+      },
+      {
+        id: 'c',
+        text: 'Upload the data to S3 using your public internet connection.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Upload the data using Direct Connect.',
+        correct: false
+      }
+    ],
+    explain:
+      'This would be the perfect choice to transmit your data. Snowball encrypts your data and comes in 50TB or 80TB flavors, so all the security and speed requirements would be met. Remember that Snowcone is only 8TB'
   }
 ];
