@@ -1126,5 +1126,179 @@ export const ExamPractice = [
     ],
     explain:
       'This would be the perfect choice to transmit your data. Snowball encrypts your data and comes in 50TB or 80TB flavors, so all the security and speed requirements would be met. Remember that Snowcone is only 8TB'
+  },
+  {
+    id: '41',
+    cat: '2',
+    q: 'A software company is developing an online "learn a new language" application. The application will be designed to teach up to 20 different languages for native English and Spanish speakers. It should leverage services that are capable of keeping up with 24,000 read units per second and 3,300 write units per second, and scale for spikes and off-peak. The application will also need to store user progress data. Which AWS services would meet these requirements?',
+    options: [
+      {
+        id: 'a',
+        text: 'RDS',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'EBS',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'DynamoDB',
+        correct: true
+      },
+      {
+        id: 'd',
+        text: 'S3',
+        correct: false
+      }
+    ],
+    explain:
+      'DynamoDB is highly scalable and provides very high performance, supporting 24,000 read units per second and 3,300 write units per second. A great case study for this is Duolingo, which uses Amazon DynamoDB to store 31 billion items in support of an online learning site that delivers lessons for 80 languages'
+  },
+  {
+    id: '42',
+    cat: '2',
+    q: 'A small startup company has begun using AWS for all of its IT infrastructure. The company has one AWS Solutions Architect and the demands for their time are overwhelming. The software team has been given permission to deploy their Python and PHP applications on their own. They would like to deploy these applications without having to worry about the underlying infrastructure. Which AWS service would they use for deployments?',
+    options: [
+      {
+        id: 'a',
+        text: 'Elastic Beanstalk',
+        correct: true
+      },
+      {
+        id: 'b',
+        text: 'CloudFront',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'CodeDeploy',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'CloudFormation',
+        correct: false
+      }
+    ],
+    explain:
+      'With Elastic Beanstalk, you can quickly deploy and manage applications in the AWS Cloud without having to learn about the infrastructure that runs those applications. Elastic Beanstalk reduces management complexity without restricting choice or control. You simply upload your application, and Elastic Beanstalk automatically handles the details of capacity provisioning, load balancing, scaling, and application health monitoring. Elastic Beanstalk supports applications developed in Go, Java, .NET, Node.js, PHP, Python, and Ruby. When you deploy your application, Elastic Beanstalk builds the selected supported platform version and provisions one or more AWS resources, such as Amazon EC2 instances, to run your application.'
+  },
+  {
+    id: '43',
+    cat: '2',
+    q: "You have multiple EC2 instances housing applications in a VPC in a single Availability Zone. Your EC2 workloads need low-latency network performance, high network throughput, and a tightly-coupled node-to-node communication. What's the best measure you can do to ensure this throughput?",
+    options: [
+      {
+        id: 'a',
+        text: 'Increase the size of the instances',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Use Auto Scaling Groups',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'Use Elastic Network Interfaces',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Launch your instances in a cluster placement group',
+        correct: true
+      }
+    ],
+    explain:
+      'A cluster placement group is a logical grouping of instances within a single Availability Zone. A cluster placement group can span peered VPCs in the same Region. Instances in the same cluster placement group enjoy a higher per-flow throughput limit for TCP/IP traffic and are placed in the same high-bisection bandwidth segment of the network'
+  },
+  {
+    id: '44',
+    cat: '3',
+    q: 'An international company has many clients around the world. These clients need to transfer gigabytes to terabytes of data quickly and on a regular basis to an S3 bucket. Which S3 feature will enable these long distance data transfers in a secure and fast manner?',
+    options: [
+      {
+        id: 'a',
+        text: 'Cross-account replication',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Transfer Acceleration',
+        correct: true
+      },
+      {
+        id: 'c',
+        text: 'AWS SnowMobile',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Multipart upload',
+        correct: false
+      }
+    ],
+    explain:
+      'You might want to use Transfer Acceleration on a bucket for various reasons, including the following: You have customers that upload to a centralized bucket from all over the world. You transfer gigabytes to terabytes of data on a regular basis across continents. You are unable to utilize all of your available bandwidth over the Internet when uploading to Amazon S3.'
+  },
+  {
+    id: '45',
+    cat: '3',
+    q: 'A consultant is hired by a small company to configure an AWS environment. The consultant begins working with the VPC and launching EC2 instances within the VPC. The initial instances will be placed in a public subnet. The consultant begins to create security groups. How many security groups can be attached to an EC2 instance?',
+    options: [
+      {
+        id: 'a',
+        text: 'You can assign up to five security groups to the instance.',
+        correct: true
+      },
+      {
+        id: 'b',
+        text: 'You can assign two security groups to an instance.',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'You can only assign one security group to an instance.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Instances in private subnets cannot have multiple security groups.',
+        correct: false
+      }
+    ],
+    explain:
+      "A security group acts as a virtual firewall for your instance to control inbound and outbound traffic. When you launch an instance in a VPC, you can assign up to five security groups to the instance. Security groups act at the instance level, not the subnet level. Therefore, each instance in a subnet in your VPC can be assigned to a different set of security groups. If you launch an instance using the Amazon EC2 API or a command-line tool and you don't specify a security group, the instance is automatically assigned to the default security group for the VPC. If you launch an instance using the Amazon EC2 console, you have an option to create a new security group for the instance. For each security group, you add rules that control the inbound traffic to instances and a separate set of rules that control the outbound traffic."
+  },
+  {
+    id: '46',
+    cat: '3',
+    q: 'A consultant is hired by a small company to configure an AWS environment. The consultant begins working with the VPC and launching EC2 instances within the VPC. The initial instances will be placed in a public subnet. The consultant begins to create security groups. What is true of security groups?',
+    options: [
+      {
+        id: 'a',
+        text: 'Security groups act at the subnet level, not the instance level.',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Security groups act at the instance level, not the subnet level.',
+        correct: true
+      },
+      {
+        id: 'c',
+        text: 'Security groups act at the VPC level, not the instance level.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Security groups are stateless.',
+        correct: false
+      }
+    ],
+    explain:
+      'There are quotas on the number of security groups that you can create per VPC, the number of rules that you can add to each security group, and the number of security groups that you can associate with a network interface. For more information, see Amazon VPC quotas. You can specify allow rules, but not deny rules. You can specify separate rules for inbound and outbound traffic. When you create a security group, it has no inbound rules. Therefore, no inbound traffic originating from another host to your instance is allowed until you add inbound rules to the security group.By default, a security group includes an outbound rule that allows all outbound traffic. You can remove the rule and add outbound rules that allow specific outbound traffic only. If your security group has no outbound rules, no outbound traffic originating from your instance is allowed. Security groups are stateful. If you send a request from your instance, the response traffic for that request is allowed to flow in regardless of inbound security group rules. Responses to allowed inbound traffic are allowed to flow out, regardless of outbound rules.'
   }
 ];

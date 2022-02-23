@@ -1438,12 +1438,12 @@ export const quizsData = [
             correct: false
           },
           {
-            id: 1,
+            id: 3,
             text: "It's emailed to sqs-help@amazon.com.",
             correct: false
           },
           {
-            id: 2,
+            id: 4,
             text: 'An SNS Topic is notified.',
             correct: false
           }
@@ -1464,13 +1464,278 @@ export const quizsData = [
             correct: false
           },
           {
-            id: 1,
+            id: 3,
             text: 'Messaging queue',
             correct: true
           },
           {
-            id: 2,
+            id: 4,
             text: 'Compute resources',
+            correct: false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'm-big-d',
+    result: [
+      {
+        id: 1,
+        question: 'What is a valid use case for Amazon EMR?',
+        options: [
+          {
+            id: 1,
+            text: 'Build real-time applications',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Analyze data in Amazon S3 using standard SQL',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Extract, transform, and load (ETL) jobs.',
+            correct: true
+          },
+          {
+            id: 4,
+            text: 'Simplify data warehouse management',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 2,
+        question: '_____ provides real-time streaming of data.',
+        options: [
+          {
+            id: 1,
+            text: 'Kinesis Data Firehose',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Kinesis Data Analytics',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'SQS',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'Kinesis Data Streams',
+            correct: true
+          }
+        ]
+      },
+      {
+        id: 3,
+        question:
+          'Which service provides the easiest way to run ad-hoc queries across multiple objects in S3 without the need to setup or manage any servers?',
+        options: [
+          {
+            id: 1,
+            text: 'EMR',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Glue',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Athena',
+            correct: true
+          },
+          {
+            id: 4,
+            text: 'S3',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 4,
+        question:
+          'True or False? You are responsible for scaling Glue performance.',
+        options: [
+          {
+            id: 1,
+            text: 'False',
+            correct: true
+          },
+          {
+            id: 2,
+            text: 'True',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 5,
+        question:
+          'How long are automatic Redshift backups retained by default?',
+        options: [
+          {
+            id: 1,
+            text: '35 Days',
+            correct: false
+          },
+          {
+            id: 2,
+            text: '1 Day',
+            correct: true
+          },
+          {
+            id: 3,
+            text: '1 Week',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'Forever',
+            correct: false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'n-serverless',
+    result: [
+      {
+        id: 1,
+        question: 'What is NOT a supported Lambda runtime?',
+        options: [
+          {
+            id: 1,
+            text: 'Node.js',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Python',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'COBOL',
+            correct: true
+          },
+          {
+            id: 4,
+            text: 'Java',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 2,
+        question: 'What is the maximum length of time Lambda can run?',
+        options: [
+          {
+            id: 1,
+            text: '30 minutes',
+            correct: false
+          },
+          {
+            id: 2,
+            text: '15 minutes',
+            correct: true
+          },
+          {
+            id: 3,
+            text: '1 hour',
+            correct: false
+          },
+          {
+            id: 4,
+            text: '1 minute',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 3,
+        question: 'Which of the following is a common trigger for Lambda?',
+        options: [
+          {
+            id: 1,
+            text: 'CloudWatch Events (EventBridge)',
+            correct: true
+          },
+          {
+            id: 2,
+            text: 'QuickSight',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'IAM',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'EC2',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 4,
+        question:
+          'What feature of ECS and EKS allows you to run containers without having to manage the underlying hosts?',
+        options: [
+          {
+            id: 1,
+            text: 'Lambda',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'S3',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'EC2',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'Fargate',
+            correct: true
+          }
+        ]
+      },
+      {
+        id: 5,
+        question:
+          "What is one thing EC2 instances allow you to configure but a serverless application doesn't?",
+        options: [
+          {
+            id: 1,
+            text: 'The ability to pay for the service.',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Operating System',
+            correct: true
+          },
+          {
+            id: 3,
+            text: 'The ability to configure the service.',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'VPC placement',
             correct: false
           }
         ]
