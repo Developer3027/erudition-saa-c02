@@ -1741,5 +1741,817 @@ export const quizsData = [
         ]
       }
     ]
+  },
+  {
+    id: 'o-security',
+    result: [
+      {
+        id: 1,
+        question: 'Which of the following is NOT a data source for GuardDuty?',
+        options: [
+          {
+            id: 1,
+            text: 'CloudTrail logs',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'DNS query logs',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'VPC Flow Logs',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'RDS event history',
+            correct: true
+          }
+        ]
+      },
+      {
+        id: 2,
+        question:
+          'Where is the most cost effective place to store your database passwords in a secure manner?',
+        options: [
+          {
+            id: 1,
+            text: 'S3',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Parameter Store',
+            correct: true
+          },
+          {
+            id: 3,
+            text: 'Secrets Manager',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'EBS',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 3,
+        question: "What service does Macie monitor once you've enabled it?",
+        options: [
+          {
+            id: 1,
+            text: 'EBS',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'CloudWatch Logs',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'S3',
+            correct: true
+          },
+          {
+            id: 4,
+            text: 'SQS',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 4,
+        question:
+          'Which of the following security issues is something that WAF could NOT block?',
+        options: [
+          {
+            id: 1,
+            text: 'Blocking specific countries from accessing your application.',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'A SQL injection attack.',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Stopping users from torrenting movies.',
+            correct: true
+          },
+          {
+            id: 4,
+            text: 'A cross-site scripting attack.',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 5,
+        question:
+          'True or False? For customers on Business or Enterprise support plans, AWS Shield Advanced provides access to a 24/7 support team to help with DDoS issues.',
+        options: [
+          {
+            id: 1,
+            text: 'True',
+            correct: true
+          },
+          {
+            id: 2,
+            text: 'False',
+            correct: false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'p-automate',
+    result: [
+      {
+        id: 1,
+        question:
+          'What are common use cases for the AWS Systems Manager Parameter Store "SecureString" parameter?',
+        options: [
+          {
+            id: 1,
+            text: 'For managing the patch level on your Windows servers.',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'For connecting to your EC2 instances.',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'For managing the string variable in a secure fashion.',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'For using data/parameters across AWS services without exposing the values as plaintext in commands, functions, agent logs, or CloudTrail logs.',
+            correct: true
+          }
+        ]
+      },
+      {
+        id: 2,
+        question:
+          'What part of a CloudFormation template allows you to pass values into the template?',
+        options: [
+          {
+            id: 1,
+            text: 'Resources',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Settings',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Parameters',
+            correct: true
+          },
+          {
+            id: 4,
+            text: 'Conditions',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 3,
+        question:
+          'Whenever possible, we should focus on __ processes over doing things ____.',
+        options: [
+          {
+            id: 1,
+            text: 'Manually, automating',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Reviewing, at scale',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Automating, manually',
+            correct: true
+          },
+          {
+            id: 4,
+            text: 'On premises installs, in the cloud',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 4,
+        question:
+          'What best describes "immutable pattern" for application code deployments?',
+        options: [
+          {
+            id: 1,
+            text: "Deployment of application code can't modify existing cloud resources, requiring creation of new resources.",
+            correct: true
+          },
+          {
+            id: 2,
+            text: 'Deployment of application code requires your cloud architecture to be in read-only mode.',
+            correct: false
+          },
+          {
+            id: 3,
+            text: "Deployment of application code can't proceed because AWS has locked your account.",
+            correct: false
+          },
+          {
+            id: 4,
+            text: "Deployment of application code can't destroy cloud resources.",
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 5,
+        question:
+          'Which of the following is NOT a benefit of deploying an application using Elastic Beanstalk?',
+        options: [
+          {
+            id: 1,
+            text: 'It will deploy and update your applications for you.',
+            correct: true
+          },
+          {
+            id: 2,
+            text: 'It will automatically replace instances that fail.',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'You maintain full control over all of your architecture.',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'Elastic Beanstalk will rewrite your applications from any language into Python.',
+            correct: true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'q-caching',
+    result: [
+      {
+        id: 1,
+        question: 'DAX is designed to sit in front of what AWS data service?',
+        options: [
+          {
+            id: 1,
+            text: 'DynamoDB',
+            correct: true
+          },
+          {
+            id: 2,
+            text: 'RDS',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'S3',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'Redshift',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 2,
+        question:
+          'What type of physical AWS architecture does CloudFront use to improve performance?',
+        options: [
+          {
+            id: 1,
+            text: 'Regions',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Availability Zones',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Edge Locations',
+            correct: true
+          },
+          {
+            id: 4,
+            text: 'Local Regions',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 3,
+        question: 'What 2 types of caches are supported by ElastiCache?',
+        options: [
+          {
+            id: 1,
+            text: 'Couchbase and SafePeak',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'DBCache and MeMStore',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'NCache and DAX',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'Redis and Memcached',
+            correct: true
+          }
+        ]
+      },
+      {
+        id: 4,
+        question: 'How do caches help improve performance?',
+        options: [
+          {
+            id: 1,
+            text: 'They help your EC2 instance count scale to accommodate heavier workloads.',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Caching allows you to efficiently reuse previously retrieved or computed data.',
+            correct: true
+          },
+          {
+            id: 3,
+            text: "They take dynamic content and hold onto it until it's no longer relevant.",
+            correct: false
+          },
+          {
+            id: 4,
+            text: "They don't. It's best to ignore caches when designing your application.",
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 5,
+        question:
+          'True or False? Global Accelerator is the only AWS service that allows you to create weights for your application endpoints.',
+        options: [
+          {
+            id: 1,
+            text: 'True',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'False',
+            correct: true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'r-governance',
+    result: [
+      {
+        id: 1,
+        question: 'Which tool allows you to visualize your AWS spend?',
+        options: [
+          {
+            id: 1,
+            text: 'Cost Explorer',
+            correct: true
+          },
+          {
+            id: 2,
+            text: 'Lambda',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Budgets',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'CloudWatch',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 2,
+        question: 'How can you consolidate the AWS bill for your organization?',
+        options: [
+          {
+            id: 1,
+            text: 'Enable consolidated billing.',
+            correct: true
+          },
+          {
+            id: 2,
+            text: 'AD Connector',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Simple AD',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'Contact AWS support.',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 3,
+        question: 'Where should AWS SSO NOT be used?',
+        options: [
+          {
+            id: 1,
+            text: 'For handling AWS Console logins.',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'For internal users authenticating to an internal application.',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'For internal users signing in to a 3rd party application that supports SAML.',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'For external users authenticating to a mobile application.',
+            correct: true
+          }
+        ]
+      },
+      {
+        id: 4,
+        question:
+          'How can you alert your dev team when they are approaching their monthly budget?',
+        options: [
+          {
+            id: 1,
+            text: 'S3 Spending Alarm',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'AWS Organizations',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'CloudWatch Logs Event Patterns',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'Create a budget using AWS Budgets.',
+            correct: true
+          }
+        ]
+      },
+      {
+        id: 5,
+        question:
+          'How can you stop a root user from terminating EC2 instances?',
+        options: [
+          {
+            id: 1,
+            text: 'Delete the root account.',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'The root account cannot be restricted.',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Remove the policy document that is attached to the root account.',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'Apply a service control policy (SCP) to the account to deny this action.',
+            correct: true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 's-migration',
+    result: [
+      {
+        id: 1,
+        question:
+          'What would be the best way to migrate 100 PB of data into AWS?',
+        options: [
+          {
+            id: 1,
+            text: 'Snowball',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Snowcone',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Snowmobile',
+            correct: true
+          },
+          {
+            id: 4,
+            text: 'Direct Connect',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 2,
+        question:
+          'Which tool would you use to migrate a database from on-premises to RDS?',
+        options: [
+          {
+            id: 1,
+            text: 'Server Migration Service',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'DataSync',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Snowball',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'Database Migration Service',
+            correct: true
+          }
+        ]
+      },
+      {
+        id: 3,
+        question:
+          'Which tool would you use to organize and track your cloud migration?',
+        options: [
+          {
+            id: 1,
+            text: 'Server Migration Service',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Trusted Advisor',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Migration Hub',
+            correct: true
+          },
+          {
+            id: 4,
+            text: 'Cost Explorer',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 4,
+        question:
+          'What tool would you use to convert an Oracle database to a format compatible with Amazon Aurora for a database migration?',
+        options: [
+          {
+            id: 1,
+            text: 'DataSync',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Migration Hub',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Volume Gateway',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'Schema Conversion Tool',
+            correct: true
+          }
+        ]
+      },
+      {
+        id: 5,
+        question:
+          'What would be the best way to migrate 80 TB of data into S3 if you have limited bandwidth at your data center?',
+        options: [
+          {
+            id: 1,
+            text: 'S3 Transfer Acceleration',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Over the internet',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Direct Connect',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'Snowball',
+            correct: true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 't-exam',
+    result: [
+      {
+        id: 1,
+        question:
+          'What would be the best way to migrate 100 PB of data into AWS?',
+        options: [
+          {
+            id: 1,
+            text: 'Snowball',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Snowcone',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Snowmobile',
+            correct: true
+          },
+          {
+            id: 4,
+            text: 'Direct Connect',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 2,
+        question:
+          'Which tool would you use to migrate a database from on-premises to RDS?',
+        options: [
+          {
+            id: 1,
+            text: 'Server Migration Service',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'DataSync',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Snowball',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'Database Migration Service',
+            correct: true
+          }
+        ]
+      },
+      {
+        id: 3,
+        question:
+          'Which tool would you use to organize and track your cloud migration?',
+        options: [
+          {
+            id: 1,
+            text: 'Server Migration Service',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Trusted Advisor',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Migration Hub',
+            correct: true
+          },
+          {
+            id: 4,
+            text: 'Cost Explorer',
+            correct: false
+          }
+        ]
+      },
+      {
+        id: 4,
+        question:
+          'What tool would you use to convert an Oracle database to a format compatible with Amazon Aurora for a database migration?',
+        options: [
+          {
+            id: 1,
+            text: 'DataSync',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Migration Hub',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Volume Gateway',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'Schema Conversion Tool',
+            correct: true
+          }
+        ]
+      },
+      {
+        id: 5,
+        question:
+          'What would be the best way to migrate 80 TB of data into S3 if you have limited bandwidth at your data center?',
+        options: [
+          {
+            id: 1,
+            text: 'S3 Transfer Acceleration',
+            correct: false
+          },
+          {
+            id: 2,
+            text: 'Over the internet',
+            correct: false
+          },
+          {
+            id: 3,
+            text: 'Direct Connect',
+            correct: false
+          },
+          {
+            id: 4,
+            text: 'Snowball',
+            correct: true
+          }
+        ]
+      }
+    ]
   }
 ];

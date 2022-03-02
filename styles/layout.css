@@ -87,7 +87,7 @@
   background: var(--light-bg);
   color: var(--bg-icon);
   width: 250px;
-  height: 100vh;
+  height: calc(100vh - 5em);
   display: flex;
   justify-content: center;
   position: fixed;

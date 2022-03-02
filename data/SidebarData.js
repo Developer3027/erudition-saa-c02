@@ -145,7 +145,7 @@ export const SidebarData = [
       },
       {
         title: 'Exam',
-        path: '/saa-prep/exam',
+        path: '/saa-prep/t-exam',
         icon: <HiOutlineDotsVertical />
       }
     ]
