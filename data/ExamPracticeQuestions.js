@@ -1300,5 +1300,120 @@ export const ExamPractice = [
     ],
     explain:
       'There are quotas on the number of security groups that you can create per VPC, the number of rules that you can add to each security group, and the number of security groups that you can associate with a network interface. For more information, see Amazon VPC quotas. You can specify allow rules, but not deny rules. You can specify separate rules for inbound and outbound traffic. When you create a security group, it has no inbound rules. Therefore, no inbound traffic originating from another host to your instance is allowed until you add inbound rules to the security group.By default, a security group includes an outbound rule that allows all outbound traffic. You can remove the rule and add outbound rules that allow specific outbound traffic only. If your security group has no outbound rules, no outbound traffic originating from your instance is allowed. Security groups are stateful. If you send a request from your instance, the response traffic for that request is allowed to flow in regardless of inbound security group rules. Responses to allowed inbound traffic are allowed to flow out, regardless of outbound rules.'
+  },
+  {
+    id: '47',
+    cat: '3',
+    q: 'A financial institution has begun using AWS services and plans to migrate as much of their IT infrastructure and applications to AWS as possible. The nature of the business dictates that strict compliance practices be in place. The AWS team has configured AWS CloudTrail to help meet compliance requirements and be ready for any upcoming audits. Which item is not a feature of AWS CloudTrail?',
+    options: [
+      {
+        id: 'a',
+        text: 'Track changes to resources.',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Monitor Auto Scaling Groups and optimize resource utilization.',
+        correct: true
+      },
+      {
+        id: 'c',
+        text: 'Enables compliance.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Answer simple questions about user activity.',
+        correct: false
+      }
+    ],
+    explain: 'This is a feature provided by CloudWatch.'
+  },
+  {
+    id: '48',
+    cat: '4',
+    q: 'You work for a Defense contracting company. The company develops software applications which perform intensive calculations in the area of Mechanical Engineering related to metals for ship building. The company competes for and wins contracts that typically range from 1 year to up to 5 years. These long-term contracts mean that the duration of your need for EC2 instances can be matched to the length of these contracts, and then extended if necessary. The main requirement is consistent performance for the duration of the contract. Which EC2 purchasing option provides the best value, given these long-term contracts?',
+    options: [
+      {
+        id: 'a',
+        text: 'Dedicated Host',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Reserved',
+        correct: true
+      },
+      {
+        id: 'c',
+        text: 'On-Demand',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Spot',
+        correct: false
+      }
+    ],
+    explain:
+      'Amazon EC2 provides the following purchasing options to enable you to optimize your costs based on your needs: On-Demand Instances – Pay, by the second, for the instances that you launch. Savings Plans – Reduce your Amazon EC2 costs by making a commitment to a consistent amount of usage, in USD per hour, for a term of 1 or 3 years. Reserved Instances – Reduce your Amazon EC2 costs by making a commitment to a consistent instance configuration, including instance type and region, for a term of 1 or 3 years. Scheduled Instances – Purchase instances that are always available on the specified recurring schedule, for a one-year term. Spot Instances – Request unused EC2 instances, which can reduce your Amazon EC2 costs significantly. Dedicated Hosts – Pay for a physical host that is fully dedicated to running your instances, and bring your existing per-socket, per-core, or per-VM software licenses to reduce costs. Dedicated Instances – Pay, by the hour, for instances that run on single-tenant hardware. Capacity Reservations – Reserve capacity for your EC2 instances in a specific Availability Zone for any duration.'
+  },
+  {
+    id: '49',
+    cat: '4',
+    q: 'Your company is storing stack traces for application errors in an S3 Bucket. The engineers using these stack traces review them when addressing application issues. It has been decided that the files only need to be kept for four weeks then they can be purged. How can you meet this requirement in S3?',
+    options: [
+      {
+        id: 'a',
+        text: 'Write a cron job to purge the files after one month.',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Configure the S3 Lifecycle rules to purge the files after a month.',
+        correct: true
+      },
+      {
+        id: 'c',
+        text: 'Create a bucket policy to purge the rules after one month.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Add an S3 Lifecycle rule to archive these files to Glacier after one month.',
+        correct: false
+      }
+    ],
+    explain:
+      'To manage your objects so that they are stored cost-effectively throughout their lifecycle, configure their Amazon S3 Lifecycle. An S3 Lifecycle configuration is a set of rules that define actions that Amazon S3 applies to a group of objects. There are two types of actions: Transition actions define when objects transition to another storage class. For example, you might choose to transition objects to the S3 Standard-IA storage class 30 days after you created them, or archive objects to the S3 Glacier storage class one year after creating them. Expiration actions define when objects expire. Amazon S3 deletes expired objects on your behalf. The lifecycle expiration costs depend on when you choose to expire objects.'
+  },
+  {
+    id: '50',
+    cat: '4',
+    q: 'After an IT Steering Committee meeting, you have been put in charge of configuring a hybrid environment for the company’s compute resources. You weigh the pros and cons of various technologies based on the requirements you are given. The main requirements to drive this selection are overall cost considerations and the ability to reuse existing internet connections. Which technology best meets these requirements?',
+    options: [
+      {
+        id: 'a',
+        text: 'AWS Direct Gateway',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'AWS Direct Connect',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'AWS Managed VPN',
+        correct: true
+      },
+      {
+        id: 'd',
+        text: 'VPC Peering',
+        correct: false
+      }
+    ],
+    explain:
+      'AWS Managed VPN lets you reuse existing VPN equipment and processes, and reuse existing internet connections. It is an AWS-managed high availability VPN service. It supports static routes or dynamic Border Gateway Protocol (BGP) peering and routing policies.'
   }
 ];
