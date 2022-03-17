@@ -1415,5 +1415,237 @@ export const ExamPractice = [
     ],
     explain:
       'AWS Managed VPN lets you reuse existing VPN equipment and processes, and reuse existing internet connections. It is an AWS-managed high availability VPN service. It supports static routes or dynamic Border Gateway Protocol (BGP) peering and routing policies.'
+  },
+  {
+    id: '51',
+    cat: '1',
+    q: 'You have a typical architecture for an Application Load Balancer fronting an Auto Scaling group of EC2 instances, backed by an RDS MySQL database. Your Application Load Balancer is performing health checks on the EC2 instances. What actions will be taken if an instance fails these health checks?',
+    options: [
+      {
+        id: 'a',
+        text: 'The ALB notifies the Auto Scaling group that the instance is down.',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'The ALB stops sending traffic to the instance.',
+        correct: true
+      },
+      {
+        id: 'c',
+        text: 'The instance is terminated by the ALB.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'The instance is replaced by the ALB.',
+        correct: false
+      }
+    ],
+    explain:
+      'The load balancer routes requests only to the healthy instances. When the load balancer determines that an instance is unhealthy, it stops routing requests to that instance. The load balancer resumes routing requests to the instance when it has been restored to a healthy state.'
+  },
+  {
+    id: '52',
+    cat: '1',
+    q: 'You are working as a Solutions Architect in a large healthcare organization. You have many Auto Scaling Groups that utilize launch configurations. Many of these launch configurations are similar yet have subtle differences. You’d like to use multiple versions of these launch configurations. An ideal approach would be to have a default launch configuration and then have additional versions that add additional features. Which option best meets these requirements?',
+    options: [
+      {
+        id: 'a',
+        text: 'Use launch templates instead.',
+        correct: true
+      },
+      {
+        id: 'b',
+        text: 'Simply create the needed versions. Launch configurations already have versioning.',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'Create the launch configurations in CloudFormation and version the templates accordingly.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Store the launch configurations in S3 and turn on versioning.',
+        correct: false
+      }
+    ],
+    explain:
+      'A launch template is similar to a launch configuration, in that it specifies instance configuration information. Included are the ID of the Amazon Machine Image (AMI), the instance type, a key pair, security groups, and the other parameters that you use to launch EC2 instances. However, defining a launch template instead of a launch configuration allows you to have multiple versions of a template. With versioning, you can create a subset of the full set of parameters and then reuse it to create other templates or template versions. For example, you can create a default template that defines common configuration parameters and allow the other parameters to be specified as part of another version of the same template.'
+  },
+  {
+    id: '53',
+    cat: '1',
+    q: 'A new startup company decides to use AWS to host their web application. They configure a VPC as well as two subnets within the VPC. They also attach an internet gateway to the VPC. In the first subnet, they create an EC2 instance to host a web application. There is a network ACL and a security group, which both have the proper ingress and egress to and from the internet. There is a route in the route table to the internet gateway. The EC2 instances added to the subnet need to have a globally unique IP address to ensure internet access. Which is not a globally unique IP address?',
+    options: [
+      {
+        id: 'a',
+        text: 'Elastic IP address',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Private IP address',
+        correct: true
+      },
+      {
+        id: 'c',
+        text: 'IPv6 address',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Public IP address',
+        correct: false
+      }
+    ],
+    explain:
+      'Public IPv4 address, elastic IP address, and IPv6 address are globally unique addresses. The IPv4 addresses known for not being unique are private IPs. These are found in the following ranges: from 10.0.0.0 to 10.255.255.255, from 172.16.0.0 to 172.31.255.255, and from 192.168.0.0 to 192.168.255.255.'
+  },
+  {
+    id: '54',
+    cat: '1',
+    q: 'You work for an online retailer where any downtime at all can cause a significant loss of revenue. You have architected your application to be deployed on an Auto Scaling Group of EC2 instances behind a load balancer. You have configured and deployed these resources using a CloudFormation template. The Auto Scaling Group is configured with default settings and a simple CPU utilization scaling policy. You have also set up multiple Availability Zones for high availability. The load balancer does health checks against an HTML file generated by script. When you begin performing load testing on your application and notice in CloudWatch that the load balancer is not sending traffic to one of your EC2 instances. What could be the problem?',
+    options: [
+      {
+        id: 'a',
+        text: 'The EC2 instance has failed the load balancer health check.',
+        correct: true
+      },
+      {
+        id: 'b',
+        text: 'You are load testing at a moderate traffic level and not all instances are needed.',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'The EC2 instance has failed EC2 status checks.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'The instance has not been registered with CloudWatch.',
+        correct: false
+      }
+    ],
+    explain:
+      'The load balancer will route the incoming requests only to the healthy instances. The EC2 instance may have passed status checks and be considered healthy to the Auto Scaling group, but the ELB may not use it if the ELB health check has not been met. The ELB health check has a default of 30 seconds between checks, and a default of 3 checks before making a decision. Therefore, the instance could be visually available but unused for at least 90 seconds before the GUI would show it as failed. In CloudWatch, where the issue was noticed, it would appear to be a healthy EC2 instance but with no traffic, which is what was observed.'
+  },
+  {
+    id: '55',
+    cat: '1',
+    q: 'Your application is housed on an Auto Scaling Group of EC2 instances. The application is backed by the Multi-AZ MySQL RDS database and an additional read replica. You need to simulate some failures for disaster recovery drills. Which event will not cause an RDS to perform a failover to the standby replica?',
+    options: [
+      {
+        id: 'a',
+        text: 'Loss of network connectivity to primary.',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Storage failure on primary.',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'Compute unit failure on primary.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Read replica failure',
+        correct: true
+      }
+    ],
+    explain:
+      'When you provision a Multi-AZ DB instance, Amazon RDS automatically creates a primary DB instance and synchronously replicates the data to a standby instance in a different Availability Zone (AZ). Each AZ runs on its own physically distinct, independent infrastructure, and is engineered to be highly reliable. In case of an infrastructure failure, Amazon RDS performs an automatic failover to the standby (or to a read replica in the case of Amazon Aurora), so that you can resume database operations as soon as the failover is complete. Since the endpoint for your DB Instance remains the same after a failover, your application can resume database operation without the need for manual administrative intervention.'
+  },
+  {
+    id: '56',
+    cat: '1',
+    q: "Your company is currently building out a second AWS region. Following best practices, they've been using CloudFormation to make the migration easier. They've run into a problem with the template though. Whenever the template is created in the new region, it's still referencing the AMI in the old region. What is the best solution to automatically select the correct AMI when the template is deployed in the new region?",
+    options: [
+      {
+        id: 'a',
+        text: 'Update the AMI in the old region, as AMIs are universal.',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Create a mapping in the template. Define the unique AMI value per region.',
+        correct: true
+      },
+      {
+        id: 'c',
+        text: 'Create a Parameter section in the template. Whenever the template is run, fill in the correct AMI ID.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Create a condition in the template to automatically select the correct AMI ID.',
+        correct: true
+      }
+    ],
+    explain:
+      'This is exactly what mappings are built for. By using mappings, you easily automate this issue away. Make sure to copy your AMI to the region before you try and run the template, though, as AMIs are region specific.'
+  },
+  {
+    id: '57',
+    cat: '1',
+    q: 'You have been tasked with designing a strategy for backing up EBS volumes attached to an instance-store-backed EC2 instance. You have been asked for an executive summary on your design, and the executive summary should include an answer to the question, “What can an EBS volume do when snapshotting the volume is in progress”?',
+    options: [
+      {
+        id: 'a',
+        text: 'The volume can only accommodate writes while a snapshot is in progress.',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'The volume can only accommodate reads while a snapshot is in progress.',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'The volume cannot be used while a snapshot is in progress.',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'The volume can be used normally while the snapshot is in progress.',
+        correct: true
+      }
+    ],
+    explain:
+      'You can create a point-in-time snapshot of an EBS volume and use it as a baseline for new volumes or for data backup. If you make periodic snapshots of a volume, the snapshots are incremental; the new snapshot saves only the blocks that have changed since your last snapshot. Snapshots occur asynchronously; the point-in-time snapshot is created immediately, but the status of the snapshot is pending until the snapshot is complete (when all of the modified blocks have been transferred to Amazon S3), which can take several hours for large initial snapshots or subsequent snapshots where many blocks have changed. While it is completing, an in-progress snapshot is not affected by ongoing reads and writes to the volume.'
+  },
+  {
+    id: '58',
+    cat: '1',
+    q: 'You have taken over management of several instances in the company AWS environment. You want to quickly review scripts used to bootstrap the instances at runtime. A URL command can be used to do this. What can you append to the URL http://169.254.169.254/latest/ to retrieve this data?',
+    options: [
+      {
+        id: 'a',
+        text: 'instance-data/',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'instance-demographic-data/',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'user-data/',
+        correct: true
+      },
+      {
+        id: 'd',
+        text: 'meta-data/',
+        correct: false
+      }
+    ],
+    explain:
+      'When you launch an instance in Amazon EC2, you have the option of passing user data to the instance that can be used to perform common automated configuration tasks and even run scripts after the instance starts. You can pass two types of user data to Amazon EC2: shell scripts and cloud-init directives.'
   }
 ];
