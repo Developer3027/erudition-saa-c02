@@ -762,7 +762,7 @@ export const ExamPractice = [
       },
       {
         id: 'b',
-        text: "ach subnet in your VPC must be associated with a network ACL. If you don't explicitly associate a subnet with a network ACL, the subnet is automatically associated with the default network ACL.",
+        text: "Each subnet in your VPC must be associated with a network ACL. If you don't explicitly associate a subnet with a network ACL, the subnet is automatically associated with the default network ACL.",
         correct: true
       },
       {
@@ -1647,5 +1647,63 @@ export const ExamPractice = [
     ],
     explain:
       'When you launch an instance in Amazon EC2, you have the option of passing user data to the instance that can be used to perform common automated configuration tasks and even run scripts after the instance starts. You can pass two types of user data to Amazon EC2: shell scripts and cloud-init directives.'
+  },
+  {
+    id: '59',
+    cat: '2',
+    q: 'A travel company has deployed a web application that serves travel updates to users all over the world. This application uses an Amazon RDS database, which is very read-heavy and can have performance issues at certain times of the year. What can you do to enhance performance and reduce the load on your source DB instance?',
+    options: [
+      {
+        id: 'a',
+        text: 'Configure multi-Region RDS',
+        correct: false
+      },
+      {
+        id: 'b',
+        text: 'Place CloudFront in front of the Database',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'Configure RDS Multi-AZ',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'Add read replicas',
+        correct: true
+      }
+    ],
+    explain:
+      'Amazon RDS Read Replicas provide enhanced performance and durability for RDS database (DB) instances. They can be within an Availability Zone, Cross-AZ, or Cross-Region, and they make it easy to elastically scale out beyond the capacity constraints of a single DB instance for read-heavy database workloads. You can create one or more replicas of a given source DB Instance and serve high-volume application read traffic from multiple copies of your data, thereby increasing aggregate read throughput. Read replicas can also be promoted when needed to become standalone DB instances. Read replicas are available in Amazon RDS for MySQL, MariaDB, PostgreSQL, Oracle, and SQL Server as well as Amazon Aurora.'
+  },
+  {
+    id: '60',
+    cat: '2',
+    q: 'You work for an oil and gas company as a lead in data analytics. The company is using IoT devices to better understand their assets in the field (for example, pumps, generators, valve assemblies, and so on). Your task is to monitor the IoT devices in real-time to provide valuable insight that can help you maintain the reliability, availability, and performance of your IoT devices. What tool can you use to process streaming data in real time with standard SQL without having to learn new programming languages or processing frameworks?',
+    options: [
+      {
+        id: 'a',
+        text: 'Kinesis Data Analytics',
+        correct: true
+      },
+      {
+        id: 'b',
+        text: 'AWS Kinesis Streams',
+        correct: false
+      },
+      {
+        id: 'c',
+        text: 'AWS Lambda',
+        correct: false
+      },
+      {
+        id: 'd',
+        text: 'AWS RedShift',
+        correct: false
+      }
+    ],
+    explain:
+      'Monitoring IoT devices in real-time can provide valuable insight that can help you maintain the reliability, availability, and performance of your IoT devices. You can track time series data on device connectivity and activity. This insight can help you react quickly to changing conditions and emerging situations. Amazon Web Services (AWS) offers a comprehensive set of powerful, flexible, and simple-to-use services that enable you to extract insights and actionable information in real time. Amazon Kinesis is a platform for streaming data on AWS, offering key capabilities to cost-effectively process streaming data at any scale. Kinesis capabilities include Amazon Kinesis Data Analytics, the easiest way to process streaming data in real time with standard SQL without having to learn new programming languages or processing frameworks.'
   }
 ];
