@@ -7,7 +7,7 @@ const Footer = () => {
       <div className='foot-wrap'>
         <div>
           <a
-            href='https://mason-roberts.com'
+            href='https://dev-mason-roberts.com'
             target='_blank'
             rel='noopener noreferrer'>
             Powered by <span className='foot-logo'>Developer3027</span>

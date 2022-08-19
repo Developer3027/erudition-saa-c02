@@ -14,15 +14,23 @@ const CertPrep = ({ notes }) => {
           <h3>Certification Preparation</h3>
           <p>
             Welcome to the cliff notes test prep for the AWS Solution Architect
-            Associate certification exam. (SAA-C02). These notes were taken
-            while going through the ACloudGuru.com certification course. I
-            recommend reviewing the course. -&gt;{' '}
+            Associate certification exam. These notes were taken while going
+            through the ACloudGuru.com certification course, or through course
+            work at PluralSight. I recommend reviewing the courses yourself.
+            -&gt;{" "}
             <a
               className={styles.testAnchor}
-              href='https://acloudguru.com/course/aws-certified-solutions-architect-associate-saa-c02'
-              target='_blank'
-              rel='noopener noreferrer'>
+              href="https://acloudguru.com/course/aws-certified-solutions-architect-associate-saa-c02"
+              target="_blank"
+              rel="noopener noreferrer">
               A cloud Guru
+            </a>{" / "}
+            <a
+              className={styles.testAnchor}
+              href="https://app.pluralsight.com/explore/certifications/topics/aws"
+              target="_blank"
+              rel="noopener noreferrer">
+              PluralSight
             </a>
           </p>
         </div>

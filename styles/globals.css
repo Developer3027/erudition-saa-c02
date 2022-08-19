@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&family=Fira+Code&display=swap');
 
 :root {
   --bg-icon: #4c3d31;
@@ -33,6 +33,12 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+code {
+  font-family: 'Fira Code', monospace;
+  color: #2f2f2f;
+  font-size: small;
 }
 
 #show {
