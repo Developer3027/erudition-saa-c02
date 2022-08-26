@@ -1,6 +1,6 @@
 ---
 title: 'Automation'
-excerpt: 'Why automate, Cloudformation'
+excerpt: 'Guru notes - Why automate, Cloudformation'
 link: 'https://acloudguru.com/course/aws-certified-solutions-architect-associate-saa-c02'
 ---
 

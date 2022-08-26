@@ -25,7 +25,7 @@ Will return a object similar to below:
 ```bash
 {
   "PublicIp": "52.6.69.153",
-  "AllocationId" : "eipalloc-04f126e9d9b71aaadc",
+  "AllocationId" : "eipalloc-04f126e9d9b7...",
   "PublicIpv4Pool": "amazon",
   "NetworkBorderGroup": "us-east-1",
   "Domain": "vpc"

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from "react-redux";
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -11,8 +12,14 @@ import HomeLearningAd from '../../components/forHome/HomeLearningAd';
 import styles from '../../styles/Test.module.css';
 
 export default function CliffNotes({ slug, contentHtml, quiz }) {
-  
-  const [showQuiz, setShowQuiz] = useState(true);
+  const quizShow = useSelector((state) => state.pref.preference.quizShow);
+
+  useEffect(() => {
+
+  }, [quizShow]);
+
+
+  const [showQuiz, setShowQuiz] = useState(quizShow);
   const [showPromo, setShowPromo] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -72,9 +79,13 @@ export default function CliffNotes({ slug, contentHtml, quiz }) {
             </>
           ) : (
             <>
-              {quiz && (
+              {quiz && quizShow ? (
                 <h2 className={showPromo ? styles.testFail : styles.testPass}>
                   You got {score} out of {quiz.result.length} correct
+                </h2>
+              ) : (
+                <h2 className={showPromo ? styles.testFail : styles.testPass}>
+                  Show Quiz preference is turned off in settings
                 </h2>
               )}
               <div dangerouslySetInnerHTML={{ __html: contentHtml }} />

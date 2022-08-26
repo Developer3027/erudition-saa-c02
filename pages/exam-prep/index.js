@@ -12,6 +12,32 @@ const ExamPrep = ({ examData }) => {
   const [score, setScore] = useState(0);
   const [final, setFinal] = useState(0);
 
+  // const { cat } = ExamPractice;
+  const domain1 = [];
+  const domain2 = [];
+  const domain3 = [];
+  const domain4 = [];
+
+  ExamPractice.map(item => {
+    if (item.cat === "1") {
+      domain1.push(item);
+    }
+    if (item.cat === "2") {
+      domain2.push(item);
+    }
+    if (item.cat === "3") {
+      domain3.push(item);
+    }
+    if (item.cat === "4") {
+      domain4.push(item);
+    }
+  });
+
+  console.log("domain 1", domain1.length);
+  console.log("domain 2", domain2.length);
+  console.log("domain 3", domain3.length);
+  console.log("domain 4", domain4.length);
+
   const answerExamQuestion = (correct) => {
     if (correct) {
       if (!wrong) {

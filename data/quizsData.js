@@ -1871,7 +1871,7 @@ export const quizsData = [
     ],
   },
   {
-    id: "automate",
+    id: "guru-automate",
     result: [
       {
         id: 1,
